@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List 실습</title>
+    <style>
+        ul li { /* ul의 list 스타일 변경 */
+            list-style: none;
+            border: 1px solid #333;
+            width: 60px;
+            text-align: center;
+            padding: 5px 0;
+            display: inline; /* inline - 옆으로, block - 아래로 */
+        }
+        ol li { /* ol의 list 스타일 변경 */
+            list-style-type: lower-roman;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="http://naver.com">네이버</a></li> <!-- 링크 첨부하기 -->
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+    </ul>
+    <ol>
+        <li>물을 끓인다.</li>
+        <li>라면을 넣는다.</li>
+        <li>먹는다.</li>
+    </ol>
+    <dl>
+        <dt>eat</dt>
+        <dd>먹는다</dd>
+        <dt>run</dt>
+        <dd>달리다</dd>
+    </dl>
+</body>
+</html>

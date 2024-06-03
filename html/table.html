@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 실습</title> <!-- 문서 제목 -->
+    <link rel="stylesheet" href="css/table.css" /> <!-- html과 css 연결 -->
+</head>
+<body>
+    <table>
+        <colgroup> <!-- column의 너비, 합계 100% 맞추기 -->
+            <col width="10%" />
+            <col width="15%" />
+            <col width="25%" />
+            <col width="25%" />
+            <col width="25%" />
+        </colgroup>
+        <caption>년도별 매출현황</caption> <!-- 테이블 제목 -->
+            <thead> <!-- 제목 라인 -->
+                <tr>
+                    <th>구분</th> <!-- th는 굵은 글씨로 출력됨 -->
+                    <th>위치</th>
+                    <th>2022년</th>
+                    <th>2023년</th>
+                    <th>2024년</th>
+                </tr>
+            </thead>
+            <tbody> <!-- 데이터 라인 -->
+                <tr>
+                    <td>1공장</td>
+                    <td rowspan="2">대구</td> <!-- rowspan = row 합치기, 겹치는 나머지 하나는 지워주기 -->
+                    <td>100</td>
+                    <td>90</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td>2공장</td>
+                    <td>150</td>
+                    <td>120</td>
+                    <td>130</td>
+                </tr>
+                <tr>
+                    <td>3공장</td>
+                    <td>울산</td>
+                    <td>120</td>
+                    <td>70</td>
+                    <td>200</td>
+                </tr>
+            </tbody>
+            <tfoot> <!-- 요약 라인 -->
+                <tr>
+                    <td colspan="2">합계</td> <!-- colspan = column 합치기 -->
+                    <td>370</td>
+                    <td>280</td>
+                    <td>450</td>
+                </tr>
+            </tfoot>
+    </table>
+</body>
+</html>
