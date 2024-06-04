@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout1 실습</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .cls { /* 모든 div에 적용 */
+            width: 100px;
+            height: 100px;
+            display: inline;
+        }
+        #wrapper {
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+        #div1 {
+            background-color: yellow;
+            float: left;
+            position: relative; /* wrapper 기준 */
+            top: 50px;
+            left: 50px;
+        }
+        #div2 {
+            background-color: red;
+            float: left;
+            position: relative;
+            top: 50px;
+            left: 150px;
+        }
+        #div3 {
+            background-color: blue;
+            float: right;
+            clear: both; /* 밑으로 떨어짐 */
+            position: absolute; /* body의 (0, 0) 기준 */
+            top: 150px;
+            left: 50px;
+        }
+        #div4 {
+            background-color: orange;
+            float: right;
+            clear: both;
+            position: absolute;
+            top: 150px;
+            left: 250px;
+        }
+        #div5 {
+            background-color: aqua;
+            float: right;
+            clear: both;
+            position: absolute;
+            top: 100px;
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="div1" class="cls">
+            div1
+        </div>
+        <div id="div2" class="cls">
+            div2
+        </div>
+        <div id="div3" class="cls">
+            div3
+        </div>
+        <div id="div4" class="cls">
+            div4
+        </div>
+        <div id="div5" class="cls">
+            div5
+        </div>
+    </div>
+</body>
+</html>

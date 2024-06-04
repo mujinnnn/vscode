@@ -1,0 +1,42 @@
+* {
+    padding: 0; /* 0 쓸 때는 뒤에 px를 잘 안 씀 */
+    margin: 0;
+}
+div {
+    font-size: 12px;
+}
+header {
+    background-color: black;
+    color: white;
+    height: 40px;
+}
+header nav { /* header 밑에 있는 nav이기 때문에 header nav */
+
+}
+header nav ul {
+    list-style-type: none;
+}
+header nav ul li {
+    float: left;
+    margin: 0 40px;
+}
+#content aside {
+    background-color: bisque;
+    width: 25%;
+    float: left;
+}
+#content #cont {
+    width: 50%;
+    float: left;
+}
+footer {
+    width: 100%;
+    background-color: lightgray;
+    height: 30px;
+    clear: both;
+    position: absolute;
+    bottom: 0;
+}
+footer p {
+    text-align: center;
+}
