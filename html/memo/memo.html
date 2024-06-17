@@ -3,55 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메모장</title>
+    <title>jQuery 메모장 v1.0</title>
     <link rel="stylesheet" href="css/memo.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/memo.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
-    <style>
-        #div1 {
-            width: 500px;
-            height: 500px;
-            border: 1px solid #333;
-        }
-    </style>
 </head>
 <body>
     <div id="wrapper">
-        <div id="div1"></div>"
-            <h1>메모장 v0.1</h1>
+        <div id="memo">
+            <div id="top">
+                <h1>MEMOPAD v1.0</h1>
+            </div>
+            <div id="write">
+                <div id="writeL">
+                    <p>
+                        <input id="title" type="text" placeholder="제목을 입력하세요!" />
+                    </p>
+                    <p>
+                        <textarea id="content" placeholder="내용을 입력하세요!"></textarea>
+                    </p>       
+                </div>
+                <div id="writeR">
+                    <input id="writeBtn" type="button" value="등록" />
+                </div>
+                <div id="writeLL">
+                    <input id="writeBtn2" type="button" value="삭제" />
+                </div>
+            </div>
+            <div id="list">
+                <div id="listL">
+                    <ul>
+                    </ul>
+                </div>
+                <div id="listR">
+                    <textarea disabled>
+
+                    </textarea>
+                </div>
+            </div>
         </div>
-            <p>
-                제목 <input type="text" />
-                <input id="btn" type="button" value="등록" /><br />
-                내용 <input type="text" />
-            </p>
-            <ul>
-                <h>2024. 6. 14 10:00</h>
-                <input id="btn2" type="button" value="삭제" /><br />
-                <h>제목 제목 제목 제목 제목</h><br />
-                <h>2024. 6. 14 10:00</h>
-                <input id="btn2" type="button" value="삭제" /><br />
-                <h>제목 제목 제목 제목 제목</h><br />
-                <h>2024. 6. 14 10:00</h>
-                <input id="btn2" type="button" value="삭제" /><br />
-                <h>제목 제목 제목 제목 제목</h><br />
-                <h>2024. 6. 14 10:00</h>
-                <input id="btn2" type="button" value="삭제" /><br />
-                <h>제목 제목 제목 제목 제목</h><br />
-                <h>2024. 6. 14 10:00</h>
-                <input id="btn2" type="button" value="삭제" /><br />
-                <h>제목 제목 제목 제목 제목</h><br />
-                <h>2024. 6. 14 10:00</h>
-                <input id="btn2" type="button" value="삭제" /><br />
-                <h>제목 제목 제목 제목 제목</h><br />
-                <h>2024. 6. 14 10:00</h>
-                <input id="btn2" type="button" value="삭제" /><br />
-                <h>제목 제목 제목 제목 제목</h><br />
-                <h>2024. 6. 14 10:00</h>
-                <input id="btn2" type="button" value="삭제" /><br />
-                <h>제목 제목 제목 제목 제목</h>
-            </ul>
-</div>
+    </div>
 </body>
 </html>
