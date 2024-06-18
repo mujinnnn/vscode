@@ -1,6 +1,7 @@
 // 성적처리 스크립트
 
 const totalPersonArr = [];
+let first = false;
 
 $(function() {
 
@@ -38,21 +39,26 @@ function init() {
 // 객체 배열 생성해서 반환 
 function getPersonArr(newPerson) {
 
-    // 3명의 성적 객체 생성
-    const hongScore = new Score(100, 90, 80);
-    const kangScore = new Score(90, 80, 70);
-    const leeScore = new Score(80, 70, 60);
+    if (!first) {
 
-    // 3명의 학생 객체 생성
-    const hong = new Person("홍길동", hongScore);
-    const kang = new Person("강감찬", kangScore);
-    const lee = new Person("이순신", leeScore);
-    
-    // newPerson이 있으면 newPerson을 포함한 personArr를 리턴
-    totalPersonArr.push(hong);
-    totalPersonArr.push(kang);
-    totalPersonArr.push(lee);
-    
+        // 3명의 성적 객체 생성
+        const hongScore = new Score(100, 90, 80);
+        const kangScore = new Score(90, 80, 70);
+        const leeScore = new Score(80, 70, 60);
+
+        // 3명의 학생 객체 생성
+        const hong = new Person("홍길동", hongScore);
+        const kang = new Person("강감찬", kangScore);
+        const lee = new Person("이순신", leeScore);
+        
+        // newPerson이 있으면 newPerson을 포함한 personArr를 리턴
+        totalPersonArr.push(hong);
+        totalPersonArr.push(kang);
+        totalPersonArr.push(lee);
+
+        first = true;
+    }
+
     if (newPerson) {
         totalPersonArr.push(newPerson);
     }
