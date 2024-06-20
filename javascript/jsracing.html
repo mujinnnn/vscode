@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이싱 프로그램</title>
+    <script src="jsracing.js"></script>
+    <style>
+        #box1{
+            width: 75px; height: 500px; border: 2px solid #333;
+            position: relative; 
+        }
+        #box2{
+            width: 1000px; height: 500px; border: 2px solid #333;
+            position: relative; left: 78px; top: -503.7px;
+        }
+        img {
+            display: inline-block; position: absolute;
+            top: 10px; width: 60px; height: 60px; left: 15px;
+        }
+        p { width: 600px; text-align: center; }
+        input[type='button'] { 
+            width: 100px; height: 80px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="box1">
+        </div>
+        <div id="box2">
+        </div>
+        <div>
+            <img id="horse" src="horse.png" />
+        </div>
+        <p>
+            <input id="startBtn" type="button" value="START" />
+        </p>
+    </div>
+</body>
+</html>
