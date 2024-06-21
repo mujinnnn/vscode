@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이싱 프로그램</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jsracing.js"></script>
+    <style>
+        #box {
+            width: 1500px;
+            height: 550px;
+            border: 2px solid #333;
+            position: relative;
+        }
+        .person {
+            width: 70px;
+            height: 70px;
+            left: 15px;
+            display: inline-block;
+            position: absolute;
+        }
+        input[type='button'] {
+            width: 200px;
+            height: 130px;
+            position: absolute;
+            left: 1520px;
+            top: 8px;
+            font-size: 50px;
+            background-color: skyblue;
+        }
+        #result {
+            margin-top: 10px;
+            padding: 20px;
+            width: 350px;
+            height: 280px;
+            border: 2px solid #ccc;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="box">
+            <p>
+                <img class="person" id="청년" src="images/1/1.JPG" style="top: 10px; left: 10px;" />
+            </p>
+            <p>
+                <img class="person" id="여학생" src="images/1/1.JPG" style="top: 130px; left: 10px;" />
+            </p>
+            <p>
+                <img class="person" id="아가씨" src="images/1/1.JPG" style="top: 250px; left: 10px;" />
+            </p>
+            <p>
+                <img class="person" id="꼬맹이" src="images/1/1.JPG" style="top: 370px; left: 10px;" />
+            </p>
+            <p>
+                <img class="person" id="아저씨" src="images/1/1.JPG" style="top: 480px; left: 10px;" />
+            </p>
+        </div>
+        <p>
+            <input id="startBtn" type="button" value="START" />
+        </p>
+        <div id="result"></div>
+    </div>
+</body>
+</html>
