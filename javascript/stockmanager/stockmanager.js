@@ -34,7 +34,7 @@ const initLocalStorage = () => {
 // 매장등록
 const writeShop = () => {
     const shopArr = getShopList();
-    shopArr.push(new Shop(getNextShopSeq(), $('#shname').val(), 0));
+    shopArr.unshift(new Shop(getNextShopSeq(), $('#shname').val(), 0));
     localStorage.setItem('shopList', JSON.stringify(shopArr));
     printShopList();
 };
@@ -48,27 +48,42 @@ const getNextShopSeq = () => {
 
 // 매장목록
 const getShopList = () => {
-    return JSON.parse(localStorage.getItem('shopList'));
+    return JSON.parse(localStorage.getItem('shopList'))
+            .sort((a, b) => b.shno - a.shno);
 };
 
 // 매장목록 출력
 const printShopList = () => {
     $('#shoplist table tbody').html('');
     getShopList().forEach(shop => {
-        let tr = $('<tr></tr>');
-        tr.append($('<td>' + shop.shno + '</td>'));
-        tr.append($('<td>' + shop.shname + '</td>'));
-        tr.append($('<td>' + shop.shtotst + '</td>'));
-        tr.append($('<td><input type="button" value="수정" /></td>'));
-        tr.append($('<td><input id="deleteShop' + shop.shno + '" type="button" value="삭제" /></td>'));
+        let tr = $("<tr></tr>");
+        tr.append($("<td>"+shop.shno+"</td>"));
+        tr.append($("<td><input id='shname"+shop.shno+"' class='width40px' type='text' value='"+shop.shname+"' /></td>"));
+        tr.append($("<td>"+shop.shtotst+"</td>"));
+        tr.append($("<td><input id='updateShopBtn"+shop.shno+"' type='button' value='수정' /></td>"));
+        tr.append($("<td><input id='deleteShopBtn"+shop.shno+"' type='button' value='삭제' /></td>"));
         $('#shoplist table tbody').append(tr);
-        $('#' + 'deleteShop' + shop.shno).on('click', () => {
+        $('#updateShopBtn' + shop.shno).on('click', () => {
+            updateShop(shop.shno);
+        });        
+        $('#deleteShopBtn' + shop.shno).on('click', () => {
             deleteShop(shop.shno);
-        });          
+        });
     });
 };
 
 // 매장수정
+const updateShop = shno => {
+    const newShopList = getShopList().map(shop => {
+        if (shop.shno == shno) {
+            return new Shop(shop.shno, $('#shname' + shop.shno).val(), shop.shtotst);
+        } else {
+            return shop;
+        }
+    });
+    localStorage.setItem('shopList', JSON.stringify(newShopList));
+    printShopList();
+};
 
 // 매장삭제
 const deleteShop = shno => {
@@ -79,9 +94,19 @@ const deleteShop = shno => {
     printShopList();
 };
 
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
 // 재고목록
 const getStockList = () => {
-    return JSON.parse(localStorage.getItem('stockList'));
+    return JSON.parse(localStorage.getItem('stockList'))
+            .sort((a, b) => b.stno - a.stno);
+};
+
+// 재고번호 시퀀스
+const getNextStockSeq = () => {
+    const nextStockSeq = Number(localStorage.getItem('stockSeq')) + 1;
+    localStorage.setItem('stockSeq', nextStockSeq);
+    return Number(nextStockSeq);
 };
 
 // 재고목록 출력
@@ -96,10 +121,10 @@ const printStockList = () => {
         tr.append($('<td>' + stock.strgdate + '</td>'));
         tr.append($('<td>' + stock.shno + '</td>'));
         tr.append($('<td><input type="button" value="수정" /></td>'));
-        tr.append($('<td><input id="deleteStock' + stock.shno + '" type="button" value="삭제" /></td>'));
+        tr.append($('<td><input id="deleteStock' + stock.stno + '" type="button" value="삭제" /></td>'));
         $('#stocklist table tbody').append(tr);
-        $('#' + 'deleteStock' + stock.shno).on('click', () => {
-            deleteStock(stock.shno);
+        $('#' + 'deleteStock' + stock.stno).on('click', () => {
+            deleteStock(stock.stno);
         });          
     });
 };
@@ -113,6 +138,17 @@ const writeStock = () => {
 };
 
 // 재고수정
+const updateStock = stno => {
+    const newStockList = getStockList().map(stock => {
+        if (stock.stno == stno) {
+            return new Stock(stock.stno, $('#shname' + stock.stno).val(), stock.shtotst);
+        } else {
+            return stock;
+        }
+    });
+    localStorage.setItem('stockList', JSON.stringify(newStockList));
+    printStockList();
+};
 
 // 재고삭제
 const deleteStock = stno => {
