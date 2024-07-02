@@ -4,11 +4,18 @@ $(() => {
     initLocalStorage();
 
     // 매장목록 출력
-    printShopList();    
+    printShopList();  
+    
+    // 재고목록 출력
+    printStockList();
 
     // 이벤트핸들러 등록
     $('#shwriteBtn').on('click', () => {
         writeShop();
+    });
+
+    $('#stwriteBtn').on('click', () => {
+        writeStock();
     });
 
 });
@@ -96,10 +103,12 @@ const deleteShop = shno => {
 
 /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
-// 재고목록
-const getStockList = () => {
-    return JSON.parse(localStorage.getItem('stockList'))
-            .sort((a, b) => b.stno - a.stno);
+// 재고등록
+const writeStock = () => {
+    const stockArr = getStockList();
+    stockArr.push(new Stock(getNextStockSeq(), $('#stname').val(), $('#stamt').val(), $('#stindate').val(), 0));
+    localStorage.setItem('stockList', JSON.stringify(stockArr));
+    printStockList();
 };
 
 // 재고번호 시퀀스
@@ -109,39 +118,43 @@ const getNextStockSeq = () => {
     return Number(nextStockSeq);
 };
 
+// 재고목록
+const getStockList = () => {
+    return JSON.parse(localStorage.getItem('stockList'))
+            .sort((a,b) => b.stno - a.stno);
+};
+
 // 재고목록 출력
 const printStockList = () => {
     $('#stocklist table tbody').html('');
-    getStockList().forEach(stock => {
-        let tr = $('<tr></tr>');
-        tr.append($('<td>' + stock.stno + '</td>'));
-        tr.append($('<td>' + stock.stname + '</td>'));
-        tr.append($('<td>' + stock.stamt + '</td>'));
-        tr.append($('<td>' + stock.stindate + '</td>'));
-        tr.append($('<td>' + stock.strgdate + '</td>'));
-        tr.append($('<td>' + stock.shno + '</td>'));
-        tr.append($('<td><input type="button" value="수정" /></td>'));
-        tr.append($('<td><input id="deleteStock' + stock.stno + '" type="button" value="삭제" /></td>'));
-        $('#stocklist table tbody').append(tr);
-        $('#' + 'deleteStock' + stock.stno).on('click', () => {
-            deleteStock(stock.stno);
-        });          
-    });
-};
-
-// 재고등록
-const writeStock = () => {
-    const stockArr = getStockList();
-    stockArr.push(new Stock(getNextStockSeq(), $('#shname').val(), 0));
-    localStorage.setItem('stockList', JSON.stringify(stockArr));
-    printStockList();
+    
+    const stockList = getStockList(); 
+    
+    if(stockList) {
+        stockList.forEach(stock => {
+            let tr = $('<tr></tr>');
+            tr.append($('<td>' + stock.stno + '</td>'));
+            tr.append($('<td>' + stock.stname + '</td>'));
+            tr.append($('<td>' + stock.stamt + '</td>'));
+            tr.append($('<td>' + stock.stindate + '</td>'));
+            tr.append($('<td>' + stock.strgdate + '</td>')); 
+            tr.append($('<td><input type="button" value="수정" /></td>'));
+            tr.append($('<td><input id="deleteStock' + stock.stno + '" type="button" value="삭제" /></td>'));
+            $('#stocklist table tbody').append(tr);
+         
+            $('#' + 'deleteStock' + stock.stno).on('click', () => {
+                deleteStock(stock.stno);
+            });          
+        });
+    }
 };
 
 // 재고수정
-const updateStock = stno => {
+
+const updateStock = shno => {
     const newStockList = getStockList().map(stock => {
         if (stock.stno == stno) {
-            return new Stock(stock.stno, $('#shname' + stock.stno).val(), stock.shtotst);
+            return new Stock(stock.stno, $('#stname' + stock.stno).val(), stock.stamt);
         } else {
             return stock;
         }
