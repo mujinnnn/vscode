@@ -1,4 +1,4 @@
-// tsquiz.ts
+/* tsquiz.ts */
 
 interface PhoneNumberDictionary {
     [phone: string]: {
