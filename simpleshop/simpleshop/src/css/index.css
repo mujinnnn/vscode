@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #header {
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  #header > h1 {
+    padding: 15px 0;
+  }
+  
+  #header > h1 > a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  #footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #ddd;
+  }
+  
+  #footer > p {
+    text-align: center;
+    padding: 15px 0;
+  }
+  
+  .productLi {
+    display: inline-block;
+    text-align: center;
+    width: 195px;
+    height: 160px;
+    border: 1px solid #666;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+  }
+  
+  .productLi img {
+    width: 160px;
+    height: 120px;
+  }

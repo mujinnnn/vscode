@@ -7,7 +7,10 @@
 // import StringReader from "./StringReader.js";
 // import NumberCounter from "./NumberCounter.js";
 // import ReactuseState from "./7.ReactUseState.js";
-import GetData from './GetData.js';
+// import GetData from './GetData.js';
+// import ReactLayout from "./9.ReactLayout";
+// import ReactStyledComponent from "./10.ReactStyledComponent";
+import ReactContextAPI from './11.ReactContextAPI.js'
 
 function App() {
     return (
@@ -21,7 +24,10 @@ function App() {
       // <ReactEvents />
       // <NumberCounter />
       // <ReactuseState />
-      <GetData />
+      // <GetData />
+      // <ReactLayout />
+      // <ReactStyledComponent />
+      <ReactContextAPI />
     );
 }
 
