@@ -1,0 +1,250 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 패딩과 테두리가 너비와 높이에 포함되도록 설정 */
+    height: 100vh; /* 전체 화면 높이를 100%로 설정 */
+}
+
+/* 헤더 스타일 */
+header {
+    background: #fff; /* 헤더 배경색을 하얀색으로 설정 */
+    color: #333; /* 글자 색상을 어두운 색으로 설정 */
+    padding: 5px 20px; /* 헤더 패딩 줄이기 */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가 */
+    z-index: 1000;
+}
+
+/* 헤더 내부 레이아웃 */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 60px; /* 로고의 높이 설정 */
+    width: auto; /* 비율 유지 */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 60px; /* 카테고리 항목 간의 간격을 넓힘 */
+}
+
+nav ul li a {
+    color: #333; /* 링크 색상 설정 */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px; /* 링크 텍스트 크기 설정 */
+}
+
+/* 인증 버튼 스타일 */
+.auth {
+    display: flex;
+}
+
+.auth-button {
+    color: #fff;
+    background: #007bff;
+    padding: 10px 20px; /* 버튼 패딩 증가 */
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 15px; /* 버튼 간격 확대 */
+    font-weight: bold;
+    font-size: 16px; /* 버튼 텍스트 크기 설정 */
+}
+
+.auth-button:hover {
+    background: #0056b3;
+}
+
+/* 페이지 컨텐츠 스타일 */
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: 80px auto 0; /* 헤더 높이만큼 위쪽 여백 추가 */
+    box-sizing: border-box; /* 패딩과 테두리가 너비에 포함되도록 설정 */
+    height: calc(100vh - 80px); /* 전체 화면 높이에서 헤더 높이만큼 뺀 높이 설정 */
+    overflow-y: auto; /* 컨텐츠가 높이를 초과할 경우 스크롤 추가 */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 폼 래퍼 스타일 */
+.form-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* 사진과 폼 간의 간격 설정 */
+}
+
+/* 사진 업로드 스타일 */
+.photo-upload {
+    flex: 1; /* 사진 업로드 부분을 크게 만들기 */
+    position: relative; /* 자식 요소에 대한 위치 설정 */
+    height: 300px; /* 높이 설정 (예시) */
+}
+
+/* 사진 등록을 위한 박스 스타일 */
+.photo-upload .upload-box {
+    width: 100%; /* 박스를 부모의 너비에 맞춤 */
+    height: 100%; /* 박스를 부모의 높이에 맞춤 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #333; /* 파란색 대시 테두리 */
+    border-radius: 8px; /* 둥근 테두리 */
+    position: relative; /* 자식 요소에 대한 위치 설정 */
+    background-color: #f9f9f9; /* 배경색 설정 */
+    color: #333; /* 텍스트 색상 설정 */
+    font-size: 16px; /* 텍스트 크기 설정 */
+    font-weight: bold; /* 텍스트 두껍게 설정 */
+}
+
+/* 사진 업로드 라벨 스타일 */
+.photo-upload label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* 파일 선택 버튼 스타일 */
+.photo-upload input[type="file"] {
+    width: 70%; /* 파일 선택 필드를 꽉 채우도록 설정 */
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px; /* 이미지와 파일 선택 필드 간의 간격 설정 */
+    position: relative;
+    z-index: 1; /* 이미지 아래로 위치 */
+}
+
+/* 등록된 이미지 스타일 */
+.photo-upload img {
+    display: block; /* 블록으로 표시 */
+    max-width: 100%; /* 이미지가 부모의 너비를 초과하지 않도록 설정 */
+    max-height: 200px; /* 최대 높이 설정 */
+    object-fit: contain; /* 이미지 비율 유지하며 컨테이너에 맞게 조정 */
+    margin-bottom: 10px; /* 이미지와 파일 선택 필드 간의 간격 설정 */
+    position: absolute; /* 절대 위치로 설정 */
+    top: 0; /* 상단에 위치 */
+    left: 0; /* 왼쪽에 위치 */
+    right: 0; /* 오른쪽에 맞춤 */
+    z-index: 0; /* 파일 선택 필드 위에 표시 */
+}
+
+/* 폼 내용 스타일 */
+.form-details {
+    flex: 2; /* 나머지 폼 부분을 비례적으로 넓힘 */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex; /* 가로 배치 */
+    align-items: center; /* 세로 정렬 */
+    gap: 10px; /* 항목 간의 간격 설정 */
+}
+
+/* 라벨 스타일 */
+.form-group label {
+    flex: 0 0 100px; /* 라벨의 너비 설정 */
+    font-weight: bold;
+}
+
+/* 입력 필드 스타일 */
+.form-group input {
+    flex: 1; /* 입력 필드가 가능한 공간을 채우도록 설정 */
+    max-width: 300px; /* 최대 너비를 설정 */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 선택 박스 스타일 */
+.form-group select {
+    flex: 1; /* 선택 박스가 가능한 공간을 채우도록 설정 */
+    max-width: 100px; /* 최대 너비를 설정 */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center; /* 가운데 정렬 */
+}
+
+/* 입력 필드 뒤에 표시될 단위 스타일 */
+.unit {
+    margin-left: 10px; /* 입력 필드와 단위 간의 간격 설정 */
+    font-weight: normal; /* 단위를 일반 글씨로 설정 */
+}
+
+/* 추가 정보 박스 스타일 */
+.additional-info {
+    margin-top: 20px; /* 파일 선택 버튼과의 간격 설정 */
+    padding: 20px; /* 박스 내부 여백 설정 */
+    border: 1px solid #ddd; /* 테두리 색상 및 두께 설정 */
+    border-radius: 8px; /* 둥근 테두리 설정 */
+    background-color: #f9f9f9; /* 배경색 설정 */
+    width: 100%; /* 박스 너비를 부모 요소에 맞춤 */
+    max-width: 800px; /* 박스의 최대 너비 설정 */
+    box-sizing: border-box; /* 패딩과 테두리가 너비에 포함되도록 설정 */
+}
+
+/* 탭 버튼 스타일 */
+.info-tabs {
+    display: flex; /* 플렉스 박스 레이아웃 사용 */
+    justify-content: space-around; /* 버튼 간의 공간을 균등하게 배치 */
+    border-bottom: 2px solid #007bff; /* 하단 테두리 색상 및 두께 설정 */
+}
+
+.tab-button {
+    text-align: center; /* 텍스트를 가운데 정렬 */
+    padding: 10px; /* 버튼 내부 여백 설정 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+    background: #e9ecef; /* 버튼 배경색 설정 */
+    border: 1px solid #ddd; /* 버튼 테두리 색상 및 두께 설정 */
+    border-radius: 4px; /* 버튼 테두리 둥글게 설정 */
+    margin-right: 5px; /* 버튼 간의 간격 설정 */
+    flex: 1; /* 버튼이 동일 너비로 분배되도록 설정 */
+}
+
+.tab-button.active {
+    background: #007bff; /* 활성화된 버튼의 배경색 설정 */
+    color: white; /* 활성화된 버튼의 텍스트 색상 설정 */
+}
+
+/* 탭 패널 스타일 */
+.tab-panel {
+    display: none; /* 기본적으로 패널을 숨김 */
+}
+
+.tab-panel.active {
+    display: block; /* 활성화된 패널을 표시 */
+}
+
+/* 텍스트 영역 스타일 */
+textarea {
+    width: 147%; /* 텍스트 영역 너비 설정 */
+    height: 200px; /* 텍스트 영역 높이 설정 */
+    padding: 10px; /* 텍스트 영역 내부 여백 설정 */
+    border: 1px solid #ddd; /* 테두리 색상 및 두께 설정 */
+    border-radius: 4px; /* 테두리 둥글게 설정 */
+    resize: vertical; /* 세로로만 크기 조절 가능 */
+}
