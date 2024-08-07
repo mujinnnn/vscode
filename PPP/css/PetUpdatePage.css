@@ -1,0 +1,322 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto; /* 스크롤 가능하도록 설정 */
+}
+
+/* 헤더 스타일 */
+header {
+    background: #fff;
+    color: #333;
+    padding: 10px 20px; /* 헤더의 상하 패딩을 조정 */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* 헤더 내부 레이아웃 */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 좌우 정렬 */
+    width: 100%;
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 중앙 정렬 */
+    box-sizing: border-box;
+}
+
+/* 로고와 네비게이션 버튼을 감싸는 컨테이너 */
+.header-left {
+    display: flex;
+    align-items: center;
+    flex: 1; /* 왼쪽 컨텐츠를 가능한 한 많이 확장 */
+}
+
+/* 로고 이미지 스타일 */
+.logo {
+    margin-right: 20px; /* 로고와 네비게이션 간의 간격 설정 */
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+/* 네비게이션 스타일 */
+nav {
+    flex: 2;
+    text-align: center; /* 중앙 정렬 */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+}
+
+nav ul li {
+    margin: 0 30px; /* 각 항목 간 간격을 설정 (30px로 증가) */
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px; /* 글씨 크기를 20px로 증가 */
+}
+
+/* 인증 버튼을 감싸는 컨테이너 스타일 */
+.header-right {
+    display: flex; /* 버튼들을 가로로 나열하기 위해 flexbox 사용 */
+    align-items: center; /* 버튼들을 세로로 중앙 정렬 */
+    gap: 10px; /* 버튼 간의 간격 */
+    margin-left: auto; /* 네비게이션과 버튼 사이의 여백을 줄이고 오른쪽으로 이동 */
+}
+
+/* 개별 인증 버튼 스타일 */
+.auth-button {
+    color: #fff; /* 버튼 텍스트 색상 설정 */
+    background: #007bff; /* 버튼 배경색 설정 */
+    padding: 10px 20px; /* 버튼의 상하 및 좌우 패딩 설정 */
+    border-radius: 4px; /* 버튼의 모서리를 둥글게 설정 */
+    text-decoration: none; /* 버튼에 기본 텍스트 장식 제거 (링크 장식 제거) */
+    font-weight: bold; /* 버튼 텍스트를 두껍게 설정 */
+    font-size: 16px; /* 버튼 텍스트 크기 설정 */
+    border: none; /* 버튼 테두리 제거 */
+    cursor: pointer; /* 커서 모양 설정 */
+}
+
+/* 버튼의 호버 상태 스타일 */
+.auth-button:hover {
+    background: #0056b3; /* 호버 시 버튼 배경색을 어두운 파란색으로 변경 */
+}
+
+/* 페이지 컨텐츠 스타일 */
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto; /* 상단 여백 */
+    box-sizing: border-box;
+    min-height: calc(100vh - 30px); /* 최소 높이 설정 */
+    position: relative; /* 자식 요소의 위치를 조정할 수 있도록 설정 */
+}
+
+/* 폼 래퍼 스타일 */
+.form-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* 사진과 폼 간의 간격 설정 */
+}
+
+/* 사진 업로드 스타일 */
+.photo-upload {
+    flex: 1;
+    position: relative;
+    height: 350px;
+}
+
+/* 사진 등록을 위한 박스 스타일 */
+.photo-upload .upload-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #333;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px; /* 박스 하단 여백을 줄임 */
+}
+
+/* 사진 업로드 라벨 스타일 */
+.photo-upload label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* 파일 선택 버튼 스타일 */
+.photo-upload input[type="file"] {
+    width: 95%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px; /* 이미지와 파일 선택 필드 간의 간격 줄임 */
+    position: relative;
+    z-index: 1;
+}
+
+/* 등록된 이미지 스타일 */
+.photo-upload img {
+    display: block;
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 5px; /* 이미지와 파일 선택 필드 간의 간격 줄임 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+/* 폼 내용 스타일 */
+.form-details {
+    flex: 2;
+    text-align: center;
+    margin-bottom: 10px; /* 상단 여백을 조정 */
+    margin-left: 40px; /* 오른쪽으로 이동하기 위해 margin-left 추가 */
+}
+
+/* 폼 그룹 스타일 */
+.form-group {
+    margin-bottom: 10px; /* 폼 그룹과 다음 항목 간의 간격 설정 */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 라벨 스타일 */
+.form-group label {
+    flex: 0 0 100px;
+    font-weight: bold;
+}
+
+/* 입력 필드 스타일 */
+.form-group input {
+    flex: 1;
+    max-width: 300px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 선택 박스 스타일 */
+.form-group select {
+    flex: 1;
+    max-width: 100px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* 입력 필드 뒤에 표시될 단위 스타일 */
+.unit {
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+/* 추가 정보 박스 스타일 */
+.additional-info {
+    margin-top: 5px; /* 텍스트 영역과 버튼 간의 간격 줄임 */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 316%; /* 박스 너비를 부모 요소에 맞춤 */
+    max-width: 1200px; /* 박스의 최대 너비 설정 */
+    box-sizing: border-box;
+}
+
+/* 탭 버튼 스타일 */
+.info-tabs {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #007bff;
+}
+
+.tab-button {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    background: #e9ecef;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px; /* 버튼 간 간격 설정 */
+    flex: 1;
+}
+
+.tab-button.active {
+    background: #007bff;
+    color: white;
+}
+
+/* 탭 패널 스타일 */
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* 텍스트 영역 스타일 */
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+/* 취소 버튼과 수정 버튼 스타일 */
+.button-group {
+    position: absolute; /* 절대 위치로 설정 */
+    bottom: 20px; /* 하단에서 20px 떨어지게 설정 */
+    left: 50%; /* 화면 중앙으로 가로 위치 조정 */
+    transform: translateX(-50%); /* 화면 중앙에 정확히 위치하도록 조정 */
+    display: flex;
+    gap: 200px; /* 버튼 간의 간격 설정 */
+}
+
+/* 공통 버튼 스타일 */
+.button-group button {
+    padding: 8px 16px; /* 버튼의 패딩 */
+    border-radius: 4px; /* 버튼 모서리 둥글게 설정 */
+    font-size: 16px; /* 버튼 글씨 크기 */
+    cursor: pointer; /* 커서 모양 설정 */
+    width: 150px; /* 버튼 너비 설정 */
+    text-align: center; /* 버튼 텍스트 가운데 정렬 */
+    border: none; /* 버튼 테두리 제거 */
+}
+
+/* 취소 버튼 스타일 */
+.cancel-button {
+    background-color: #6c757d; /* 회색 배경 */
+    color: white; /* 흰색 텍스트 */
+}
+
+/* 수정 버튼 스타일 */
+.update-button {
+    background-color: #007bff; /* 파란색 배경 */
+    color: white; /* 흰색 텍스트 */
+}
+
+/* 버튼 호버 상태 */
+.cancel-button:hover {
+    background-color: #5a6268; /* 호버 시 다소 어두운 회색 */
+}
+
+.update-button:hover {
+    background-color: #0056b3; /* 호버 시 어두운 파란색 */
+}

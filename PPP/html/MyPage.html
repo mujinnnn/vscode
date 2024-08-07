@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="../css/MyPage.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../PPP.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">사이트 소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">문의사항</a></li>
+                </ul>
+            </nav>
+            <div class="auth">
+                <a href="#" class="auth-button">로그인</a>
+                <a href="#" class="auth-button">회원가입</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="photo-upload">
+                <div class="upload-box">
+                    <img id="uploaded-image" src="">
+                </div>
+                <input type="file" id="file-upload">
+            </div>
+            <div class="form-controls">
+                <input type="text" id="nickname" placeholder="닉네임을 입력하세요">
+                <button id="submit-button">확인</button>
+            </div>
+
+            <!-- 리뷰 및 평점 박스 -->
+            <div class="review-box">
+                <h2>리뷰 및 평점</h2>
+                <div class="rating-container">
+                    <div class="stars" id="star-container">
+                        <!-- 별점 표시용 아이콘 (빈 상태) -->
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#chat-history" class="chat-button">채팅 기록</a>
+        </div>
+    </div>
+    <script src="../js/MyPage.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto; /* 스크롤 가능하도록 설정 */
+}
+
+/* 헤더 스타일 */
+header {
+    background: #fff;
+    color: #333;
+    padding: 10px 20px; /* 헤더의 상하 패딩을 조정 */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* 헤더 내부 레이아웃 */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 좌우 정렬 */
+    width: 100%;
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 중앙 정렬 */
+    box-sizing: border-box;
+}
+
+/* 로고와 네비게이션 버튼을 감싸는 컨테이너 */
+.header-left {
+    display: flex;
+    align-items: center;
+    flex: 1; /* 왼쪽 컨텐츠를 가능한 한 많이 확장 */
+}
+
+/* 로고 이미지 스타일 */
+.logo {
+    margin-right: 20px; /* 로고와 네비게이션 간의 간격 설정 */
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+/* 네비게이션 스타일 */
+nav {
+    flex: 2;
+    text-align: center; /* 중앙 정렬 */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+}
+
+nav ul li {
+    margin: 0 30px; /* 각 항목 간 간격을 설정 (30px로 증가) */
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px; /* 글씨 크기를 20px로 증가 */
+}
+
+/* 인증 버튼을 감싸는 컨테이너 스타일 */
+.header-right {
+    display: flex; /* 버튼들을 가로로 나열하기 위해 flexbox 사용 */
+    align-items: center; /* 버튼들을 세로로 중앙 정렬 */
+    gap: 10px; /* 버튼 간의 간격 */
+    margin-left: auto; /* 네비게이션과 버튼 사이의 여백을 줄이고 오른쪽으로 이동 */
+}
+
+/* 개별 인증 버튼 스타일 */
+.auth-button {
+    color: #fff; /* 버튼 텍스트 색상 설정 */
+    background: #007bff; /* 버튼 배경색 설정 */
+    padding: 10px 20px; /* 버튼의 상하 및 좌우 패딩 설정 */
+    border-radius: 4px; /* 버튼의 모서리를 둥글게 설정 */
+    text-decoration: none; /* 버튼에 기본 텍스트 장식 제거 (링크 장식 제거) */
+    font-weight: bold; /* 버튼 텍스트를 두껍게 설정 */
+    font-size: 16px; /* 버튼 텍스트 크기 설정 */
+    border: none; /* 버튼 테두리 제거 */
+    cursor: pointer; /* 커서 모양 설정 */
+}
+
+/* 버튼의 호버 상태 스타일 */
+.auth-button:hover {
+    background: #0056b3; /* 호버 시 버튼 배경색을 어두운 파란색으로 변경 */
+}
+
+/* 페이지 컨텐츠 스타일 */
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto; /* 상단 여백 */
+    box-sizing: border-box;
+}
+
+/* 폼 래퍼 스타일 */
+.form-wrapper {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    gap: 20px; /* 요소 간의 간격 설정 */
+}
+
+/* 사진 업로드 스타일 */
+.photo-upload {
+    position: relative;
+    height: 350px;
+    width: 100%;
+    padding-top: 30px; /* 사진 등록 박스가 위에서 내려오도록 설정 */
+    box-sizing: border-box;
+}
+
+/* 사진 등록을 위한 박스 스타일 */
+.photo-upload .upload-box {
+    width: 25%; /* 너비를 25%로 설정 */
+    height: 0; /* 높이를 0으로 설정하여 동그란 모양을 유지 */
+    padding-top: 25%; /* 원형 비율 유지 */
+    border-radius: 50%; /* 박스를 원형으로 만듦 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #333;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px; /* 박스 하단 여백을 늘려서 더 많은 공간 확보 */
+    position: relative; /* 파일 선택 박스가 이 원형 박스 아래에 오도록 설정 */
+    overflow: hidden; /* 이미지가 동그란 영역 밖으로 나오지 않도록 설정 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
+    cursor: pointer; /* 텍스트에 커서가 포인터로 변경 */
+    margin-left: 20px; /* 오른쪽으로 살짝 이동 */
+}
+
+/* 사진 등록 텍스트 위치 조정 */
+.photo-upload .upload-box::before {
+    content: "사진 등록";
+    display: block;
+    position: absolute;
+    top: 50%; /* 중앙 정렬을 위해 위치 설정 */
+    left: 50%; /* 중앙 정렬을 위해 위치 설정 */
+    transform: translate(-50%, -50%); /* 중앙 정렬을 위해 변환 */
+}
+
+/* 사진 등록 이미지 스타일 */
+.photo-upload .upload-box img {
+    position: absolute; /* 이미지의 위치를 조정 */
+    top: 0; /* 이미지 상단을 박스 상단에 맞춤 */
+    left: 0; /* 이미지 좌측을 박스 좌측에 맞춤 */
+    width: 100%; /* 박스의 전체 너비를 사용 */
+    height: 100%; /* 박스의 전체 높이를 사용 */
+    object-fit: cover; /* 이미지를 박스에 맞게 잘라서 표시 */
+    z-index: 1; /* 텍스트 위로 표시 */
+}
+
+/* 파일 선택 버튼 스타일 */
+.photo-upload input[type="file"] {
+    display: none; /* 파일 선택 버튼 숨김 */
+}
+
+/* 닉네임 입력 및 확인 버튼 스타일 */
+.form-controls {
+    display: flex;
+    align-items: center; /* 세로 방향 중앙 정렬 */
+    gap: 15px; /* 입력 칸과 버튼 간의 간격 */
+}
+
+.form-controls input[type="text"] {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px; /* 입력 칸의 너비 설정 */
+}
+
+.form-controls button {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 13px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-controls button:hover {
+    background-color: #0056b3;
+}
+
+/* 리뷰 및 평점 박스 스타일 */
+.review-box {
+    width: 15%;
+    margin-top: 20px; /* 폼과 리뷰 박스 간의 간격 설정 */
+    margin-left: 40px; /* 오른쪽으로 살짝 이동 */
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex; /* Flexbox 사용으로 중앙 정렬 가능 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가로 방향 중앙 정렬 */
+    justify-content: center; /* 세로 방향 중앙 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    position: relative; /* 위치 조정을 위한 상대 위치 설정 */
+}
+
+/* 리뷰 및 평점 글씨를 위로 이동시키기 위한 스타일 */
+.review-box h2 {
+    margin-bottom: 10px; /* 제목과 별점 간의 간격 설정 */
+    position: relative; /* 텍스트 위치 조정을 위한 상대 위치 설정 */
+    top: -15px; /* 위로 이동시키기 위한 값 설정 (필요에 따라 조정) */
+}
+
+/* 별점 표시를 감싸는 컨테이너 스타일 */
+.rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 별과 텍스트를 중앙에 정렬 */
+    gap: 10px; /* 별과 텍스트 간의 간격 설정 */
+}
+
+/* 별점 스타일 */
+.stars {
+    font-size: 24px;
+    color: #ddd; /* 빈 별의 색상 */
+}
+
+.star {
+    color: #ffd700; /* 채워진 별의 색상 (예: 금색) */
+}
+
+.chat-button {
+    display: block;
+    width: 15%;
+    height: 45px;
+    padding: 15px 15px; /* 좌우 패딩만 남기고 상하 패딩 제거 */
+    margin: 20px 0;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 55px;
+    line-height: 45px; /* 버튼의 높이와 동일하게 설정하여 텍스트 수직 정렬 */
+}
+
+/* 버튼 호버 상태 스타일 */
+.chat-button:hover {
+    background-color: #0056b3; /* 호버 시 버튼 배경색 변경 */
+}
