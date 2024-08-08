@@ -27,33 +27,53 @@
         </div>
     </header>
     <div class="container">
+        <h1>마이페이지</h1>
         <div class="form-wrapper">
-            <div class="photo-upload">
-                <div class="upload-box">
-                    <img id="uploaded-image" src="">
+            <div class="photo-box">
+                <div class="photo-upload">
+                    <div class="upload-box" id="upload-box">
+                        <img id="uploaded-image" src="">
+                    </div>
+                    <input type="file" id="file-upload">
                 </div>
-                <input type="file" id="file-upload">
-            </div>
-            <div class="form-controls">
-                <input type="text" id="nickname" placeholder="닉네임을 입력하세요">
-                <button id="submit-button">확인</button>
-            </div>
-
-            <!-- 리뷰 및 평점 박스 -->
-            <div class="review-box">
-                <h2>리뷰 및 평점</h2>
-                <div class="rating-container">
-                    <div class="stars" id="star-container">
-                        <!-- 별점 표시용 아이콘 (빈 상태) -->
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
+                <div class="form-controls">
+                    <input type="text" id="nickname" placeholder="닉네임을 입력하세요">
+                    <button id="submit-button">확인</button>
+                </div>
+                <div class="review-box">
+                    <h2>리뷰 및 평점</h2>
+                    <div class="rating-container">
+                        <div class="stars" id="star-container">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                        <span class="average-rating">4.2</span>
                     </div>
                 </div>
             </div>
+            <div class="pet-list-container">
+                <div class="pet-item">
+                    <img src="">
+                    <div class="pet-name">
+                    </div>
+                    <div class="pet-info">
+                    </div>
+                    <button class="cancel-button">삭제</button>
+                </div>
+                <!-- 추가적인 애완동물 아이템들... -->
+            </div>
+            <!-- 추가 박스 -->
+            <div class="additional-box">
+                <!-- 추가 박스에 필요한 다른 요소들 -->
+            </div>
+
             <a href="#chat-history" class="chat-button">채팅 기록</a>
+            <div class="withdrawal">
+                <button class="withdrawalBtn">탈퇴하기</button>
+            </div>
         </div>
     </div>
     <script src="../js/MyPage.js"></script>
