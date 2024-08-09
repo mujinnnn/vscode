@@ -29,13 +29,12 @@
     <div class="container">
         <h1>애완동물 수정</h1>
         <div class="form-wrapper">
-            <div class="photo-upload">
+            <div class="photo-upload" id="photo-upload">
                 <div class="upload-box">
                     사진 등록하기
                 </div>
-                <label for="file-upload"></label>
                 <input type="file" id="file-upload">
-                <img id="uploaded-image" src="" alt="등록된 사진" style="display: none;">
+                <img id="uploaded-image" src="" alt="등록된 사진">
                 <div class="additional-info">
                     <div class="info-tabs">
                         <div class="tab-button active" data-tab="intro">소개</div>
@@ -63,7 +62,7 @@
                         <option value="rodent">설치류</option>
                         <option value="bird">조류</option>
                     </select>
-                    <select id="gender" name="type">
+                    <select id="gender" name="gender">
                         <option value="" disabled selected>--성별--</option>
                         <option value="male">수컷</option>
                         <option value="female">암컷</option>

@@ -1,23 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('file-upload');
     const uploadedImage = document.getElementById('uploaded-image');
+    const photoUploadBox = document.getElementById('photo-upload');
     const infoTabs = document.querySelectorAll('.tab-button');
     const tabPanels = document.querySelectorAll('.tab-panel');
 
-    // 파일 선택 시 이미지 미리보기
-    fileInput.addEventListener('change', function () {
+    // 사진 등록하기 박스를 클릭하면 파일 선택 창 열기
+    photoUploadBox.addEventListener('click', function () {
+        fileInput.click();
+    });
+
+     // 파일 선택 시 이미지 미리보기
+     fileInput.addEventListener('change', function () {
         const file = fileInput.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
                 uploadedImage.src = e.target.result;
-                uploadedImage.style.display = 'block'; // 이미지를 표시
-                fileInput.style.marginTop = `${uploadedImage.offsetHeight + 20}px`; // 이미지 높이 + 여백만큼 파일 선택 버튼을 내림
+                uploadedImage.classList.add('show'); // 이미지를 표시하고 클래스 추가
+                // 이미지가 있을 때 박스의 테두리 숨기기
+                photoUploadBox.querySelector('.upload-box').style.border = 'none'; 
             };
             reader.readAsDataURL(file);
         } else {
-            uploadedImage.style.display = 'none'; // 파일이 없을 때는 미리보기를 숨김
-            fileInput.style.marginTop = '0'; // 파일 선택 버튼의 여백 초기화
+            uploadedImage.src = '';
+            uploadedImage.classList.remove('show'); // 이미지가 없을 때는 클래스 제거
+            // 박스의 테두리 복원
+            photoUploadBox.querySelector('.upload-box').style.border = ''; 
         }
     });
 

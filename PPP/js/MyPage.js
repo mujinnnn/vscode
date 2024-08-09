@@ -60,4 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 평점 업데이트 함수 호출
     updateRating();
+
+    // 삭제 버튼 클릭 시 애완동물 아이템 제거
+    document.querySelectorAll('.cancel-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const petItem = this.closest('.pet-item');
+            if (petItem) {
+                petItem.remove(); // DOM에서 애완동물 아이템 제거
+            }
+        });
+    });
 });
