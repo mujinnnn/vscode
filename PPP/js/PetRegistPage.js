@@ -1,92 +1,45 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const fileInput = document.getElementById('file-upload');
-    const uploadedImage = document.getElementById('uploaded-image');
-    const uploadBox = document.getElementById('upload-box');
-    const infoTabs = document.querySelectorAll('.tab-button');
-    const tabPanels = document.querySelectorAll('.tab-panel');
-    const submitButton = document.querySelector('.submit-button');
+// 탭 전환 기능
+function openTab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tabcontent");
+    var tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+        x[i].classList.remove("active");
+    }
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+    document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).classList.add("active");
+    event.currentTarget.classList.add("active");
+}
 
-    // "사진 등록하기" 버튼 클릭 시 파일 선택 대화상자 열기
-    uploadBox.addEventListener('click', function () {
-        fileInput.click();
-    });
+// 초기화면에서는 소개 탭이 열려 있도록 설정
+document.getElementById("intro").style.display = "block";
+document.getElementById("intro").classList.add("active");
 
-    // 등록된 이미지 클릭 시 파일 선택 대화상자 열기
-    uploadedImage.addEventListener('click', function () {
-        fileInput.click();
-    });
+// 사진 선택 시 파일 선택 창을 트리거
+function triggerFileInput() {
+    document.getElementById("photo").click(); // 파일 선택 창 열기
+}
 
-    // 파일 선택 시 이미지 미리보기
-    fileInput.addEventListener('change', function () {
-        const file = fileInput.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                uploadedImage.src = e.target.result;
-                uploadedImage.classList.add('show'); // 이미지를 표시하고 클래스 추가
-                uploadBox.style.border = 'none'; // 이미지가 있을 때 박스의 테두리 숨기기
-            };
-            reader.readAsDataURL(file);
-        } else {
-            uploadedImage.src = '';
-            uploadedImage.classList.remove('show'); // 이미지가 없을 때는 클래스 제거
-            uploadBox.style.border = ''; // 박스의 테두리 복원
+document.querySelector(".photo-placeholder").addEventListener("click", triggerFileInput);
+
+// 파일 선택 시 이미지 표시 및 테두리 제거
+document.getElementById("photo").addEventListener("change", function() {
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var imgElement = document.getElementById("uploaded-image");
+            imgElement.src = e.target.result;
+            imgElement.style.display = "block"; // 이미지 표시
+            document.querySelector(".photo-placeholder").style.display = "none"; // 텍스트 숨기기
+            document.querySelector(".photo-upload").style.border = "none"; // 테두리 제거
         }
-    });
-
-    // 탭 버튼 클릭 시 해당 탭 패널 활성화
-    infoTabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-            const tabId = this.getAttribute('data-tab');
-            
-            // 모든 탭 버튼과 패널 비활성화
-            infoTabs.forEach(btn => btn.classList.remove('active'));
-            tabPanels.forEach(panel => panel.classList.remove('active'));
-            
-            // 클릭한 탭 버튼 활성화
-            this.classList.add('active');
-            
-            // 해당 탭 패널 활성화
-            document.getElementById(tabId).classList.add('active');
-        });
-    });
-
-    // 등록 버튼 클릭 시 정보 저장
-    submitButton.addEventListener('click', function () {
-        const name = document.getElementById('name').value;
-        const type = document.getElementById('type').value;
-        const gender = document.getElementById('gender').value;
-        const breed = document.getElementById('breed').value;
-        const age = document.getElementById('age').value;
-        const height = document.getElementById('height').value;
-        const weight = document.getElementById('weight').value;
-        const intro = document.querySelector('#intro textarea').value;
-
-        // 이미지 데이터 URL 저장
-        const imageSrc = uploadedImage.src;
-
-        // 정보 객체 생성
-        const petInfo = {
-            name,
-            type,
-            gender,
-            breed,
-            age,
-            height,
-            weight,
-            intro,
-            imageSrc
-        };
-
-        // 로컬 스토리지에 저장
-        let pets = JSON.parse(localStorage.getItem('pets')) || [];
-        pets.push(petInfo);
-        localStorage.setItem('pets', JSON.stringify(pets));
-
-        // 정보 입력 후 초기화
-        document.querySelector('form').reset();
-        uploadedImage.classList.remove('show'); // 등록 후 이미지 숨기기
-        uploadBox.style.border = ''; // 박스의 테두리 복원
-        alert('애완동물이 등록되었습니다!');
-    });
+        reader.readAsDataURL(this.files[0]); // 파일을 읽어와서 이미지로 변환
+    }
 });
+
+// 이미지 클릭 시 다시 파일 선택 창을 열 수 있도록 설정
+document.getElementById("uploaded-image").addEventListener("click", triggerFileInput);

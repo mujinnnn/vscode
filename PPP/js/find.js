@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const findIdForm = document.getElementById('find-id-form');
-    const findPasswordForm = document.getElementById('find-password-form');
-
-    findIdForm.addEventListener('submit', async function (e) {
+    // 아이디 찾기 폼 처리
+    document.getElementById('find-id-form').addEventListener('submit', async function (e) {
         e.preventDefault(); // 기본 폼 제출 방지
 
         const username = document.getElementById('find-id-username').value;
@@ -14,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:3000/api/find-id', {
+            const response = await fetch('http://localhost:3000/api/find-id', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -22,15 +20,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify({ username, email })
             });
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            if (data.success) {
-                alert(`아이디 찾기 성공: ${data.userId}`);
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success) {
+                    alert(`아이디 찾기 성공: ${data.userId}`);
+                } else {
+                    alert('아이디 찾기 실패: 해당 이름과 이메일에 대한 아이디를 찾을 수 없습니다.');
+                }
             } else {
-                alert('아이디 찾기 실패: 해당 이름과 이메일에 대한 아이디를 찾을 수 없습니다.');
+                alert('서버 응답이 정상적이지 않습니다.');
             }
         } catch (error) {
             console.error('아이디 찾기 오류:', error);
@@ -38,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    findPasswordForm.addEventListener('submit', async function (e) {
+    // 비밀번호 찾기 폼 처리
+    document.getElementById('find-password-form').addEventListener('submit', async function (e) {
         e.preventDefault(); // 기본 폼 제출 방지
 
         const userid = document.getElementById('find-password-userid').value;
@@ -50,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:3000/api/find-password', {
+            const response = await fetch('http://localhost:3000/api/request-password-reset', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -58,15 +57,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify({ userid, email })
             });
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            if (data.success) {
-                alert('비밀번호가 이메일로 전송되었습니다.');
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success) {
+                    alert('인증번호가 이메일로 전송되었습니다.');
+                    // 이후 인증번호 입력 및 비밀번호 재설정 로직 추가
+                } else {
+                    alert('비밀번호 찾기 실패: 해당 아이디와 이메일에 대한 정보를 찾을 수 없습니다.');
+                }
             } else {
-                alert('비밀번호 찾기 실패: 해당 아이디와 이메일에 대한 비밀번호를 찾을 수 없습니다.');
+                alert('서버 응답이 정상적이지 않습니다.');
             }
         } catch (error) {
             console.error('비밀번호 찾기 오류:', error);

@@ -1,436 +1,320 @@
-/* 기본 스타일 */
+/* 기본적인 전역 설정 */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: '맑은 고딕', sans-serif;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    height: 100vh;
-    overflow-y: auto; /* 스크롤 가능하도록 설정 */
 }
 
-/* 헤더 스타일 */
+/* 헤더 파트 */
 header {
-    background: #fff;
-    color: #333;
-    padding: 10px 20px; /* 헤더의 상하 패딩을 조정 */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    box-sizing: border-box;
-}
-
-/* 헤더 내부 레이아웃 */
-.header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between; /* 좌우 정렬 */
-    width: 100%;
-    max-width: 1200px; /* 최대 너비 설정 */
-    margin: 0 auto; /* 중앙 정렬 */
-    box-sizing: border-box;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
 }
 
-/* 로고와 네비게이션 버튼을 감싸는 컨테이너 */
-.header-left {
-    display: flex;
-    align-items: center;
-    flex: 1; /* 왼쪽 컨텐츠를 가능한 한 많이 확장 */
+header .logo img {
+    width: 100px;
+    height: auto;
 }
 
-/* 로고 이미지 스타일 */
-.logo {
-    margin-right: 20px; /* 로고와 네비게이션 간의 간격 설정 */
-}
-
-.logo img {
-    height: 60px;
-    width: auto;
-}
-
-/* 네비게이션 스타일 */
-nav {
-    flex: 2;
-    text-align: center; /* 중앙 정렬 */
-}
-
-nav ul {
+header nav ul {
     list-style: none;
+    display: flex;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center; /* 중앙 정렬 */
 }
 
-nav ul li {
-    margin: 0 30px; /* 각 항목 간 간격을 설정 (30px로 증가) */
+header nav ul li {
+    margin: 0 60px;
 }
 
-nav ul li a {
-    color: #333;
+header nav ul li a {
     text-decoration: none;
+    color: #000;
     font-weight: bold;
-    font-size: 20px; /* 글씨 크기를 20px로 증가 */
+    font-size: 20px;
 }
 
-/* 인증 버튼을 감싸는 컨테이너 스타일 */
-.header-right {
-    display: flex; /* 버튼들을 가로로 나열하기 위해 flexbox 사용 */
-    align-items: center; /* 버튼들을 세로로 중앙 정렬 */
-    gap: 10px; /* 버튼 간의 간격 */
-    margin-left: auto; /* 네비게이션과 버튼 사이의 여백을 줄이고 오른쪽으로 이동 */
-}
-
-/* 개별 인증 버튼 스타일 */
-.auth-button {
-    color: #fff; /* 버튼 텍스트 색상 설정 */
-    background: #007bff; /* 버튼 배경색 설정 */
-    padding: 10px 20px; /* 버튼의 상하 및 좌우 패딩 설정 */
-    border-radius: 4px; /* 버튼의 모서리를 둥글게 설정 */
-    text-decoration: none; /* 버튼에 기본 텍스트 장식 제거 (링크 장식 제거) */
-    font-weight: bold; /* 버튼 텍스트를 두껍게 설정 */
-    font-size: 16px; /* 버튼 텍스트 크기 설정 */
-    border: none; /* 버튼 테두리 제거 */
-    cursor: pointer; /* 커서 모양 설정 */
-}
-
-/* 버튼의 호버 상태 스타일 */
-.auth-button:hover {
-    background: #0056b3; /* 호버 시 버튼 배경색을 어두운 파란색으로 변경 */
-}
-
-/* 페이지 컨텐츠 스타일 */
-.container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 1200px;
-    margin: 60px auto; /* 상단 여백 설정 */
-    box-sizing: border-box;
-    position: relative; /* 자식 요소의 절대 위치에 영향을 주기 위해 상대 위치 설정 */
-    min-height: 500px; /* 최소 높이를 설정하여 기본 크기 유지 */
-}
-
-/* 폼 래퍼 스타일 */
-.form-wrapper {
-    flex: 1; /* 폼 영역이 컨테이너의 나머지 공간을 차지하도록 설정 */
+header .auth-buttons {
     display: flex;
-    flex-direction: column; /* 세로 방향으로 정렬 */
-    align-items: flex-start; /* 왼쪽 정렬 */
-    gap: 20px; /* 요소 간의 간격 설정 */
 }
 
-.photo-box {
-    float: left;
-    width: 100%;
-}
-
-/* 사진 업로드 스타일 */
-.photo-upload {
-    position: relative;
-    height: 350px;
-    width: 100%;
-    padding-top: 30px; /* 사진 등록 박스가 위에서 내려오도록 설정 */
-    box-sizing: border-box;
-}
-
-/* 사진 등록을 위한 박스 스타일 */
-.photo-upload .upload-box {
-    width: 25%; /* 너비를 25%로 설정 */
-    height: 0; /* 높이를 0으로 설정하여 동그란 모양을 유지 */
-    padding-top: 25%; /* 원형 비율 유지 */
-    border-radius: 50%; /* 박스를 원형으로 만듦 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px dashed #333;
-    background-color: #f9f9f9;
-    color: #333;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px; /* 박스 하단 여백을 늘려서 더 많은 공간 확보 */
-    position: relative; /* 파일 선택 박스가 이 원형 박스 아래에 오도록 설정 */
-    overflow: hidden; /* 이미지가 동그란 영역 밖으로 나오지 않도록 설정 */
-    text-align: center; /* 텍스트를 중앙 정렬 */
-    cursor: pointer; /* 텍스트에 커서가 포인터로 변경 */
-    margin-left: 40px; /* 오른쪽으로 살짝 이동 */
-}
-
-/* 사진 등록 텍스트 위치 조정 */
-.photo-upload .upload-box::before {
-    content: "사진 등록하기";
-    display: block;
-    position: absolute;
-    top: 50%; /* 중앙 정렬을 위해 위치 설정 */
-    left: 50%; /* 중앙 정렬을 위해 위치 설정 */
-    transform: translate(-50%, -50%); /* 중앙 정렬을 위해 변환 */
-}
-
-/* 사진 등록 이미지 스타일 */
-.photo-upload .upload-box img {
-    position: absolute; /* 이미지의 위치를 조정 */
-    top: 0; /* 이미지 상단을 박스 상단에 맞춤 */
-    left: 0; /* 이미지 좌측을 박스 좌측에 맞춤 */
-    width: 100%; /* 박스의 전체 너비를 사용 */
-    height: 100%; /* 박스의 전체 높이를 사용 */
-    object-fit: cover; /* 이미지를 박스에 맞게 잘라서 표시 */
-    z-index: 1; /* 텍스트 위로 표시 */
-}
-
-.pet-name {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    width: 90px;
-    height: 40px;
-    position: absolute;
-    top: 40px;
-    left: 305px;
-    text-align: center;
-}
-
-.pet-info {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    position: relative;
-    width: 110%;
-    height: 100px;
-    top: 40px;
-    right: -5px;
-    text-align: center;
-}
-
-/* 파일 선택 버튼 스타일 */
-.photo-upload input[type="file"] {
-    display: none; /* 파일 선택 버튼 숨김 */
-}
-
-/* 닉네임 입력 및 확인 버튼 스타일 */
-.form-controls {
-    display: flex;
-    align-items: center; /* 세로 방향 중앙 정렬 */
-    gap: 15px; /* 입력 칸과 버튼 간의 간격 */
-}
-
-.form-controls input[type="text"] {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 250px; /* 입력 칸의 너비 설정 */
-    margin-left: 20px;
-}
-
-.form-controls button {
-    background-color: #6c757d;
+header .auth-buttons button {
+    margin-left: 10px;
+    padding: 8px 20px;
+    background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 4px;
-    padding: 13px 10px;
-    font-size: 16px;
+    border-radius: 3px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-.form-controls button:hover {
+header .auth-buttons button:hover {
     background-color: #0056b3;
 }
 
-/* 리뷰 및 평점 박스 스타일 */
-.review-box {
-    width: 18%; /* 전체 너비를 사용 */
-    margin-top: 50px; /* 폼과 리뷰 박스 간의 간격을 20px로 줄임 */
-    padding: 25px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    float: left;
-    margin-left: 40px;
-    flex-direction: column; /* 세로 방향으로 정렬 */
-    align-items: center; /* 가로 방향 중앙 정렬 */
-    justify-content: center; /* 세로 방향 중앙 정렬 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    position: relative; /* 위치 조정을 위한 상대 위치 설정 */
-}
-
-/* 리뷰 및 평점 글씨를 위로 이동시키기 위한 스타일 */
-.review-box h2 {
-    margin-bottom: 10px; /* 제목과 별점 간의 간격 설정 */
-    position: relative; /* 텍스트 위치 조정을 위한 상대 위치 설정 */
-    top: -15px; /* 위로 이동시키기 위한 값 설정 (필요에 따라 조정) */
-}
-
-/* 별점 표시를 감싸는 컨테이너 스타일 */
-.rating-container {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* 별과 텍스트를 중앙에 정렬 */
-    gap: 10px; /* 별과 텍스트 간의 간격 설정 */
-}
-
-/* 별점 스타일 */
-.stars {
-    font-size: 24px;
-    color: #ddd; /* 빈 별의 색상 */
-}
-
-.star {
-    color: #ffd700; /* 채워진 별의 색상 (예: 금색) */
-}
-
-/* 평균 평점 텍스트 스타일 */
-.average-rating {
-    font-size: 20px; /* 평균 평점 글씨 크기 */
-    color: #333; /* 텍스트 색상 */
-}
-
-/* 애완동물 리스트 박스 스타일 */
-.pet-list-container {
-    position: relative; /* 상대 위치 지정 */
-    width: 600px; /* 리스트 박스의 너비 설정 */
-    margin-left: 38%; /* 위치 조정 */
-    top: -650px; /* 위로 올리기 위한 값 (적절한 값으로 조정) */
-}
-
-/* 애완동물 아이템 스타일 */
-.pet-item {
-    display: flex;
-    align-items: center; /* 애완동물 이미지와 정보 중앙 정렬 */
+/* 컨테이너 및 폼 설정 파트 */
+.container {
+    width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
     background: #fff;
-    padding: 15px;
-    border: 1px solid #6c757d;
-    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* 아이템의 너비를 리스트 박스의 너비에 맞춤 */
-    height: 200px;
-    margin-bottom: 20px; /* 아이템 간의 간격 설정 */
+    border: 1px solid #ddd;
+    min-height: 800px;
+    position: relative; /* custom-section과 additional-section을 배치하기 위해 relative 위치 설정 */
 }
 
-/* 애완동물 사진 스타일 */
-.pet-item img {
-    width: 140px; /* 이미지의 너비 설정 */
-    height: 140px; /* 이미지의 높이 설정 */
-    object-fit: cover; /* 이미지를 박스에 맞게 잘라서 표시 */
-    border-radius: 50%; /* 원형으로 만듦 */
-    border: 1px solid rgba(0, 0, 0, 0.2); /* 원형 테두리 스타일 설정 */
-    margin-right: 15px; /* 이미지와 정보 간의 간격 설정 */
-    position: relative; /* 텍스트를 정중앙에 배치하기 위한 상대 위치 설정 */
+h1 {
+    text-align: left;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-/* 사진 텍스트 스타일 */
-.pet-item img::after {
-    content: "사진"; /* 표시할 텍스트 */
+/* profile-section 설정 */
+.profile-section {
     display: flex;
-    align-items: center; /* 세로 방향 중앙 정렬 */
-    justify-content: center; /* 가로 방향 중앙 정렬 */
-    width: 100%; /* 전체 너비를 사용 */
-    height: 100%; /* 전체 높이를 사용 */
-    position: absolute; /* 절대 위치 설정 */
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.8); /* 배경색 설정 (약간 투명한 흰색) */
-    border-radius: 50%; /* 원형으로 만듦 */
-    color: rgba(0, 0, 0, 0.2); /* 텍스트 색상 설정 */
-    font-size: 16px; /* 텍스트 크기 설정 */
-    font-weight: bold; /* 텍스트 두께 설정 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    line-height: 80px; /* 텍스트 수직 중앙 정렬 */
-    z-index: 1; /* 이미지 위에 표시되도록 설정 */
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
-.additional-box {
-    border: solid 1px #333;
+.photo-upload {
+    width: 270px;
+    height: 270px;
+    border: 2px dashed #aaaaaa;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999999;
+    font-size: 16px;
+    margin-bottom: 20px;
     position: relative;
-    width: 630px;
-    margin-left: 38%;
-    top: -650px;
-    height: 100px;
-    border-radius: 8px;
-    overflow: hidden; /* 가상 요소가 박스 밖으로 나가지 않도록 설정 */
+    margin-left: 60px;
+    margin-top: 20px;
 }
 
-.additional-box::before {
-    content: '+';
-    position: absolute;
-    top: 50%; /* 세로 중앙 정렬 */
-    left: 50%; /* 가로 중앙 정렬 */
-    transform: translate(-50%, -50%); /* 중앙 정렬을 위한 변환 */
-    font-size: 60px; /* 원하는 글씨 크기로 설정 */
-    color: rgb(197, 197, 197); /* 원하는 색상으로 설정 */
-    font-weight: bold; /* 글씨 두껍게 설정 */
+.photo-placeholder {
+    text-align: center;
     cursor: pointer;
 }
 
-.additional-box:hover {
+/* nickname-section 설정 */
+.nickname-section {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.nickname-section input[type="text"] {
+    padding: 12px;
+    font-size: 14px;
+    width: 250px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.confirm-button {
+    width: 50px;
+    height: 40px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.confirm-button:hover {
+    background-color: #6e6e6e;
+}
+
+/* review-section 설정 */
+.review-section {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.review-box {
+    display: inline-block;
+    background-color: #f7f7f7;
+    padding: 30px 5px;
+    border-radius: 10px;
+    width: 240px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin-left: 70px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.review-text {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.stars {
+    font-size: 20px;
+    color: #ffc107;
+    text-align: center;
+}
+
+.score {
+    font-size: 20px;
+    color: #333333;
+    margin-left: 8px;
+    text-align: center;
+}
+
+/* chat-section 설정 */
+.chat-section {
+    text-align: left;
+}
+
+.chat-record {
+    padding: 30px 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 110px;
+    margin-top: 20px;
+}
+
+.chat-record:hover {
+    background-color: #0056b3; /* 호버 시 버튼 배경색 변경 */
+}
+
+/* custom-section 설정 */
+.custom-section {
+    position: absolute;
+    top: 120px; /* 컨테이너의 상단에서 20px 아래로 */
+    right: 60px; /* 컨테이너의 오른쪽에서 20px 왼쪽으로 */
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* additional-section 설정 */
+.additional-section {
+    position: absolute;
+    top: 320px; /* custom-section 바로 아래에 위치하도록 설정 */
+    right: 58px; /* custom-section과 같은 right 위치 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 642px;
+    height: 80px;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    font-size: 36px;
+    color: #999999;
+    cursor: pointer;
+}
+
+.additional-section:hover {
     background-color: #e6e6e6; /* 호버 시 배경색 변경 */
 }
 
-/* 수정 버튼 스타일 */
-.edit-button {
-    background-color: #e0e0e0; /* 밝은 회색 배경색 */
-    color: #333; /* 텍스트 색상 */
-    border: none;
-    border-radius: 4px;
-    padding: 20px 10px; /* 패딩 설정 */
-    font-size: 16px; /* 텍스트 크기 설정 */
-    cursor: pointer; /* 커서 모양 설정 */
-    transition: background-color 0.3s; /* 배경색 변경 효과 */
-    position: relative;
-    margin-top: -100px;
-    left: 33px;
-    text-decoration: none; /* 밑줄 제거 */
+/* photo-area 설정 */
+.photo-area {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
 }
 
-.edit-button:hover {
-    background-color: #bdbdbd; /* 호버 시 배경색 변경 */
-}
-
-/* 삭제 버튼 스타일 */
-.cancel-button {
-    background-color: #c9404d; /* 삭제 버튼의 배경색 설정 */
-    color: #fff; /* 텍스트 색상 설정 */
-    border: none;
-    border-radius: 4px;
-    padding: 20px 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    position: relative;
-    margin-top: 100px;
-    left: -5px;
-}
-
-.cancel-button:hover {
-    background-color: #c82333; /* 호버 시 배경색 변경 */
-}
-
-/* 채팅 기록 버튼 스타일 */
-.chat-button {
-    display: block;
-    width: 17%;
-    height: 50px;
-    padding: 15px 15px; /* 좌우 패딩만 남기고 상하 패딩 제거 */
-    margin: 10px 0; /* 여백을 10px로 줄임 */
-    margin-top: -350px; /* 상단 여백을 0으로 설정 */
-    background-color: #007bff;
-    color: #fff;
-    font-size: 18px;
+.photo-placeholder {
+    font-size: 14px;
+    color: #aaa;
     text-align: center;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-left: 60px;
-    line-height: 55px; /* 버튼의 높이와 동일하게 설정하여 텍스트 수직 정렬 */
 }
 
-/* 버튼 호버 상태 스타일 */
-.chat-button:hover {
-    background-color: #0056b3; /* 호버 시 버튼 배경색 변경 */
+/* text-area 설정 */
+.text-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-input {
+    width: 50%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 90px;
+}
+
+.description-input {
+    width: 90%;
+    padding: 5px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+/* button-area 설정 */
+.button-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.modify-button,
+.delete-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 60px;
+    margin-bottom: 5px;
+}
+
+.modify-button {
+    background-color: #ccc;
+    color: #333;
+}
+
+.modify-button:hover {
+    background-color: #bdbdbd;
+}
+
+.delete-button {
+    background-color: #ff4c4c;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* 호버 시 배경색 변경 */
 }
 
 /* 탈퇴 버튼 기본 스타일 */
@@ -448,7 +332,7 @@ nav ul li a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
     transition: background-color 0.3s, box-shadow 0.3s; /* 부드러운 전환 효과 */
     position: relative;
-    right: -1050px;
+    right: -985px;
 }
 
 /* 탈퇴 버튼 호버 시 스타일 */

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비밀번호 재설정</title>
+    <link rel="stylesheet" href="../css/resetpw.css"> <!-- CSS 파일 경로 -->
+</head>
+<body>
+    <form id="reset-password-form" class="form-find">
+        <div class="logo-container">
+            <img src="../img/Logo.png" alt="로고">
+            <h2>비밀번호 재설정</h2>
+        </div>
+        <div class="form-floating">
+            <label for="reset-password-token">인증번호</label>
+            <input type="text" id="reset-password-token" class="form-control" placeholder="인증번호" required>
+        </div>
+        <div class="form-floating">
+            <label for="reset-password-new-password">새 비밀번호</label>
+            <input type="password" id="reset-password-new-password" class="form-control" placeholder="새 비밀번호" required>
+        </div>
+        <div class="form-floating">
+            <label for="reset-password-confirm-password">새 비밀번호 확인</label>
+            <input type="password" id="reset-password-confirm-password" class="form-control" placeholder="새 비밀번호 확인" required>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">비밀번호 재설정</button>
+    </form>
+
+    <script src="../JS/resetpw.js"></script> <!-- 자바스크립트 파일 경로 -->
+</body>
+</html>
