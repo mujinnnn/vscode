@@ -28,7 +28,7 @@
     <main>
         <div class="container">
             <h1>애완동물 등록</h1>
-            <form action="register_pet.php" method="post" enctype="multipart/form-data">
+            <form action="/register_pet" method="post" enctype="multipart/form-data">
                 <div class="form-row">
                     <div class="left-section">
                         <div class="photo-upload">
@@ -45,9 +45,9 @@
                             <input type="text" id="name" name="name">
                         </div>
                         <div class="form-group">
-                            <label for="breed">품종</label>
+                            <label for="breed">종류</label>
                             <select id="breed" name="breed">
-                                <option value="dog">--품종--</option>
+                                <option value="dog">--종류--</option>
                                 <option value="dog">포유류</option>
                                 <option value="cat">조류</option>
                                 <option value="fish">설치류</option>

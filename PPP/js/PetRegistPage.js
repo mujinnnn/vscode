@@ -43,3 +43,22 @@ document.getElementById("photo").addEventListener("change", function() {
 
 // 이미지 클릭 시 다시 파일 선택 창을 열 수 있도록 설정
 document.getElementById("uploaded-image").addEventListener("click", triggerFileInput);
+
+document.querySelector("form").addEventListener("submit", function(event) {
+    var name = document.getElementById("name").value;
+    var breed = document.getElementById("breed").value;
+    var gender = document.querySelector("input[name='gender']:checked");
+
+    if (!name || !breed || !gender) {
+        event.preventDefault(); // 폼 제출을 막음
+        alert("모든 필수 필드를 입력해주세요.");
+    }
+});
+
+document.querySelector("form").addEventListener("submit", function(event) {
+    var imgElement = document.getElementById("uploaded-image");
+    if (imgElement.style.display === "none") {
+        event.preventDefault();
+        alert("사진을 업로드해주세요.");
+    }
+});
