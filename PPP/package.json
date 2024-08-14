@@ -1,7 +1,7 @@
 {
   "name": "ppp",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -9,17 +9,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "formidable": "^3.5.1",
     "multer": "^1.4.5-lts.1",
-    "mysql": "^2.18.1",
     "nodemailer": "^6.9.14",
-    "oracledb": "^6.6.0",
-    "redis": "^4.7.0"
-  },
-  "description": ""
+    "oracledb": "^6.6.0"
+  }
 }
