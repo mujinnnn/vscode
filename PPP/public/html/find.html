@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디/비밀번호 찾기 - Pet Platform Project</title>
+    <link rel="stylesheet" href="../css/find.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="find-id-form" class="form-find">
+                <div class="logo-container">
+                    <img src="../img/Logo.png" alt="로고">
+                    <h2>아이디 찾기</h2>
+                </div>
+                <div class="form-floating">
+                    <label for="find-id-username">이름</label>
+                    <input type="text" id="find-id-username" class="form-control" placeholder="이름" required>
+                </div>
+                <div class="form-floating">
+                    <label for="find-id-email">이메일</label>
+                    <input type="email" id="find-id-email" class="form-control" placeholder="이메일" required>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">아이디 찾기</button>
+            </form>
+
+            <form id="find-password-form" class="form-find">
+                <div class="logo-container">
+                    <img src="../img/Logo.png" alt="로고">
+                    <h2>비밀번호 찾기</h2>
+                </div>
+                <div class="form-floating">
+                    <label for="find-password-userid">아이디</label>
+                    <input type="text" id="find-password-userid" class="form-control" placeholder="아이디" required>
+                </div>
+                <div class="form-floating">
+                    <label for="find-password-email">이메일</label>
+                    <input type="email" id="find-password-email" class="form-control" placeholder="이메일" required>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">비밀번호 찾기</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/find.js"></script>
+</body>
+</html>

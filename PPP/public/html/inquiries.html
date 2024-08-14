@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의사항</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../img/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="about.html" class="nav-link" id="about-link">사이트 소개</a></li>
+                    <li><a href="terms.html" class="nav-link" id="terms-link">이용약관</a></li>
+                    <li><a href="inquiries.html" class="nav-link active" id="inquiries-link">문의사항</a></li>
+                    <li><a href="register.html" class="nav-link">회원가입</a></li>
+                    <li><a href="login.html" class="nav-link" id="login-link">로그인</a></li>
+                    <span id="username-display" style="display:none;"></span>
+                    <button id="logout-button" style="display:none;" onclick="logout()">로그 아웃</button>              
+                </ul>
+            </nav>
+        </header>
+
+        <div class="terms-container">
+            <div class="terms-sidebar">
+                <ul>
+                    <li class="terms-tab active" data-content="service">서비스 문의</li>
+                    <li class="terms-tab" data-content="review">리뷰 및 평점 문의</li>
+                    <li class="terms-tab" data-content="account">계정 관련 문의</li>
+                    <li class="terms-tab" data-content="report">신고 문의</li>
+                </ul>
+            </div>
+            <div class="terms-content">
+                <div id="service" class="terms-content-item active">
+                    <h3>서비스 문의</h3>
+                    <!-- 등록된 서비스 문의 리스트 -->
+                    <table class="inquiry-table">
+                        <tr>
+                            <th>문의 날짜</th>
+                            <th>내용</th>
+                            <th>상태</th>
+                        </tr>
+                        <!-- 이곳에 실제 데이터 삽입 -->
+                    </table>
+                    <button class="register-btn" onclick="showForm('service')">등록하기</button>
+                </div>
+
+                <div id="review" class="terms-content-item">
+                    <h3>리뷰 및 평점 문의</h3>
+                    <table class="inquiry-table">
+                        <tr>
+                            <th>문의 날짜</th>
+                            <th>내용</th>
+                            <th>상태</th>
+                        </tr>
+                        <!-- 이곳에 실제 데이터 삽입 -->
+                    </table>
+                    <button class="register-btn" onclick="showForm('review')">등록하기</button>
+                </div>
+
+                <div id="account" class="terms-content-item">
+                    <h3>계정 관련 문의</h3>
+                    <table class="inquiry-table">
+                        <tr>
+                            <th>문의 날짜</th>
+                            <th>내용</th>
+                            <th>상태</th>
+                        </tr>
+                        <!-- 이곳에 실제 데이터 삽입 -->
+                    </table>
+                    <button class="register-btn" onclick="showForm('account')">등록하기</button>
+                </div>
+
+                <div id="report" class="terms-content-item">
+                    <h3>신고 문의</h3>
+                    <table class="inquiry-table">
+                        <tr>
+                            <th>문의 날짜</th>
+                            <th>내용</th>
+                            <th>상태</th>
+                        </tr>
+                        <!-- 이곳에 실제 데이터 삽입 -->
+                    </table>
+                    <button class="register-btn" onclick="showForm('report')">등록하기</button>
+                </div>
+
+                <!-- 등록하기 폼 -->
+                <div id="inquiry-form" class="inquiry-form" style="display: none;">
+                    <form id="inquiryForm" method="post" action="/api/inquiries" enctype="multipart/form-data">
+                        <input type="hidden" name="type" value="service">
+                        <div>
+                            <label for="title">제목</label>
+                            <input type="text" id="title" name="title" required>
+                        </div>
+                        <div>
+                            <label for="description">내용</label>
+                            <textarea id="description" name="description" rows="10" required></textarea>
+                        </div>
+                        <div>
+                            <label for="attachment">파일 선택</label>
+                            <input type="file" id="attachment" name="attachment">
+                        </div>
+                        <button type="submit">문의하기</button>
+                    </form>
+                                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showForm(type) {
+            document.getElementById('inquiry-form').style.display = 'block';
+            document.getElementById('inquiryForm').setAttribute('action', `/api/inquiries?type=${type}`);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.terms-tab');
+            const contentItems = document.querySelectorAll('.terms-content-item');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(tab => tab.classList.remove('active'));
+                    contentItems.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                    const contentId = this.getAttribute('data-content');
+                    document.getElementById(contentId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

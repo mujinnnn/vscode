@@ -1,0 +1,220 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: #495057;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #6c757d;
+    color: white;
+}
+
+.terms-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.terms-sidebar {
+    width: 200px;
+    border-right: 2px solid #dee2e6;
+    padding-right: 20px;
+}
+
+.terms-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.terms-tab {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #dee2e6;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.terms-tab.active {
+    background-color: #6c757d;
+    color: white;
+}
+
+.terms-content {
+    padding-left: 20px;
+    width: 100%;
+}
+
+.terms-content-item {
+    display: none;
+}
+
+.terms-content-item.active {
+    display: block;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.inquiry-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.inquiry-table th, .inquiry-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.inquiry-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.inquiry-table td .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.status.pending {
+    background-color: #ffc107; /* 대기중 */
+}
+
+.status.in-progress {
+    background-color: #17a2b8; /* 처리중 */
+}
+
+.status.complete {
+    background-color: #28a745; /* 완료 */
+}
+
+.register-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+}
+
+.inquiry-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.inquiry-table th, .inquiry-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.inquiry-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.register-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+}
+
+.inquiry-form {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.inquiry-form div {
+    margin-bottom: 10px;
+}
+
+.inquiry-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inquiry-form input[type="text"],
+.inquiry-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inquiry-form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inquiry-form button:hover {
+    background-color: #218838;
+}
+
