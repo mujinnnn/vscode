@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // 아이디 찾기 폼 처리
     document.getElementById('find-id-form').addEventListener('submit', async function (e) {
         e.preventDefault(); // 기본 폼 제출 방지
-
         const username = document.getElementById('find-id-username').value;
         const email = document.getElementById('find-id-email').value;
 
@@ -75,3 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+

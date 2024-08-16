@@ -1,22 +1,24 @@
 {
-  "name": "ppp",
+  "name": "my_project",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.14",
-    "oracledb": "^6.6.0"
-  }
+    "oracledb": "^6.6.0",
+    "session-file-store": "^1.5.0",
+    "socket.io": "^4.7.5"
+  },
+  "description": ""
 }

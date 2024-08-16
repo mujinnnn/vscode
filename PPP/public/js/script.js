@@ -1,31 +1,31 @@
-document.addEventListener('DOMContentLoaded', function () {
-    checkLoginStatus();  // 페이지가 로드될 때 로그인 상태를 확인합니다.
-});
 
 function checkLoginStatus() {
-    function checkLoginStatus() {
-        fetch('http://localhost:5500/api/check-login', {
-            credentials: 'include'
-        })
-        
-        .then(response => response.json())
-        .then(data => {
-            if (data.loggedIn) {
-                document.getElementById('username-display').textContent = data.username;
-                document.getElementById('login-link').style.display = 'none';
-                document.getElementById('logout-button').style.display = 'block';
-            } else {
-                document.getElementById('username-display').style.display = 'none';
-                document.getElementById('logout-button').style.display = 'none';
-                document.getElementById('login-link').style.display = 'block';
-                window.location.href = 'login.html'; // 로그인되지 않은 경우 로그인 페이지로 이동
-            }
-        })
-        .catch(error => {
-            console.error('로그인 상태 확인 중 오류:', error);
-            // 필요한 경우 오류에 대한 처리 추가
-        });
-    }
+    fetch('http://localhost:5500/api/check-login', {
+        credentials: 'include' // 세션 쿠키를 포함하여 요청
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.loggedIn) {
+            // 로그인되어 있는 경우, 로그아웃 버튼 표시
+            document.getElementById('username-display').textContent = data.username;
+            document.getElementById('username-display').style.display = 'block';
+            document.getElementById('login-link').style.display = 'none';
+            document.getElementById('logout-button').style.display = 'block';
+        } else {
+            // 로그인되지 않은 경우, 로그인 버튼 표시
+            document.getElementById('username-display').style.display = 'none';
+            document.getElementById('login-link').style.display = 'block';
+            document.getElementById('logout-button').style.display = 'none';
+        }
+    })
+    .catch(error => console.error('로그인 상태 확인 중 오류:', error));
+}
+
+// 페이지 로드 시 로그인 상태 확인
+document.addEventListener('DOMContentLoaded', function() {
+    checkLoginStatus();
+});
+
     
 
 function logout() {
@@ -97,5 +97,4 @@ function updateActiveTab(page) {
     if (termsTabs[page]) {
         document.querySelector(`.terms-tab[data-content="${termsTabs[page]}"]`).classList.add('active');
     }
-}
 }
