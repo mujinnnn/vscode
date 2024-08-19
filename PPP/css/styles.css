@@ -1,0 +1,437 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000; /* 전체 컨테이너에 검은색 테두리 추가 */
+    border-radius: 15px; /* 컨테이너 모서리를 둥글게 */
+    padding: 5px; /* 전체 컨테이너에 패딩 추가 */
+}
+
+.profile-text {
+    font-size: 18px;
+    margin-right: 10px; /* 텍스트와 로그아웃 버튼 사이의 간격 */
+}
+
+.logout-btn {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #e5e7eb; /* 회색 배경 */
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #d1d5db; /* 호버 시 약간 더 진한 회색 배경 */
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: #495057;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #6c757d;
+    color: white;
+}
+
+.terms-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.terms-sidebar {
+    width: 200px;
+    border-right: 2px solid #dee2e6;
+    padding-right: 20px;
+}
+
+.terms-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.terms-tab {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #dee2e6;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.terms-tab.active {
+    background-color: #6c757d;
+    color: white;
+}
+
+.terms-content {
+    padding-left: 20px;
+    width: 100%;
+}
+
+.terms-content-item {
+    display: none;
+}
+
+.terms-content-item.active {
+    display: block;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.inquiry-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.inquiry-table th, .inquiry-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.inquiry-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.inquiry-table td .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.status.pending {
+    background-color: #ffc107; /* 대기중 */
+}
+
+.status.in-progress {
+    background-color: #17a2b8; /* 처리중 */
+}
+
+.status.complete {
+    background-color: #28a745; /* 완료 */
+}
+
+.register-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+}
+
+.inquiry-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.inquiry-table th, .inquiry-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.inquiry-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.register-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+}
+
+.inquiry-form {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.inquiry-form div {
+    margin-bottom: 10px;
+}
+
+.inquiry-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inquiry-form input[type="text"],
+.inquiry-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inquiry-form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inquiry-form button:hover {
+    background-color: #218838;
+}
+
+
+.inquiry-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #dee2e6;
+    padding: 10px; /* 전체 상자 내부의 간격을 추가 */
+    margin-bottom: 15px; /* 전체 상자 간의 간격을 추가 */
+    border-radius: 5px;
+    background-color: white;
+    min-height: auto; /* 최소 높이 제거 */
+}
+
+.inquiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.inquiry-title {
+    font-size: 30px; /* 제목 크기 설정 */
+    margin-top: 10px; /* 제목과 위 요소(이름) 사이의 간격 추가 */
+    margin-bottom: 0; /* 제목과 아래 요소 사이의 간격을 없애기 */
+    line-height: 1.2;
+}
+
+.inquiry-status-box {
+    display: flex;
+    align-items: center; /* 접수 버튼과 다른 요소가 같은 라인에 오도록 설정 */
+    justify-content: flex-end;
+    margin-left: auto;
+    position: relative;
+    top: -40px; /* 접수 버튼을 위로 올려 높이 감소 */
+    margin-bottom: 0; /* 하단 마진 제거 */
+}
+
+.inquiry-date {
+    font-size: 11px;
+    color: #888;
+    margin-right: 5px; /* 접수 버튼과 시간 간의 간격을 줄임 */
+}
+
+.inquiry-status {
+    padding: 10px 20px; /* 버튼 크기를 키우기 위해 패딩을 증가 */
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 20px; /* 버튼 텍스트 크기를 키움 */
+    text-align: center;
+    margin-bottom: 0; /* 하단 마진 제거 */
+}
+
+.inquiry-username {
+    font-size: 12px;
+    color: #495057;
+    margin-right: 10px;
+    display: block;
+    margin-bottom: 5px;
+}
+/* 문의 상세 정보 섹션 스타일 */
+
+.inquiry-details {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.inquiry-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #212529;
+    margin-bottom: 20px;
+}
+
+.content-box {
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    min-height: 150px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.inquiry-details .return-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* 목록으로 돌아가기 버튼을 오른쪽 상단으로 이동 */
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.inquiry-details .return-btn:hover {
+    background-color: #0056b3;
+}
+
+.inquiry-details .date {
+    position: absolute;
+    top: 70px; /* 날짜를 제목 아래에 위치시키기 */
+    right: 20px; /* 오른쪽 정렬 */
+    font-size: 14px;
+    color: #868e96;
+}
+
+.inquiry-details .status {
+    position: absolute;
+    top: 95px; /* 날짜 바로 아래에 상태를 위치시킴 */
+    right: 20px; /* 오른쪽 정렬 */
+    font-size: 16px;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.inquiry-details .content-box {
+    margin-top: 60px; /* 제목과 내용을 구분하기 위한 간격 추가 */
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #f8f9fa; /* 내용 전용 박스 배경색 추가 */
+    min-height: 150px; /* 내용 박스의 최소 높이 설정 */
+}
+
+.inquiry-details p {
+    margin: 15px 0;
+    font-size: 16px;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.inquiry-details strong {
+    font-weight: bold;
+    color: #212529;
+}
+
+.inquiry-details .comment-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #adb5bd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.inquiry-details .comment-item p {
+    margin: 0 0 8px;
+    font-size: 15px;
+    color: #343a40;
+}
+
+.inquiry-details .comment-item small {
+    font-size: 13px;
+    color: #6c757d;
+}
+
+.inquiry-details form {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    border-top: 2px solid #dee2e6;
+    padding-top: 20px;
+}
+
+.inquiry-details form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.inquiry-details form button {
+    padding: 10px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.inquiry-details form button:hover {
+    background-color: #0056b3;
+}

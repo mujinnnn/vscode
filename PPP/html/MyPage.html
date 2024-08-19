@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="../css/MyPage.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../PPP.png" alt="Logo" onclick="location.href='main1.html'">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">사이트 소개</a></li>
+                <li><a href="terms.html">이용약관</a></li>
+                <li><a href="inquiries.html">문의사항</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <span class="profile-text">정재훈 님</span>
+            <button class="logout-btn" onclick="location.href='login.html'">로그아웃</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- 사용자 프로필 섹션 -->
+            <div class="profile-section">
+                <div class="photo-upload" id="photo-upload">
+                    <input type="file" id="photo" name="photo" accept="image/*" style="display: none;">
+                    <div class="photo-placeholder">사진 등록하기</div>
+                    <img id="uploaded-image">
+                </div>
+                <div class="profile-details">
+                    <div class="nickname-section">
+                        <input type="text" value="정재훈">
+                    </div>
+                    <button class="record-btn">채팅기록</button>
+                    <button class="withdrawalBtn">탈퇴</button>
+                </div>
+            </div>
+            <!-- 동물 정보가 추가될 컨테이너 -->
+            <div class="pet-info-container">
+                <!-- 동물 정보들이 이곳에 추가됩니다 -->
+            </div>
+            <!-- 추가 버튼 섹션 -->
+            <div class="additional-section" onclick="window.location.href='PetRegistPage.html';">
+                <div class="additional-placeholder">+</div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../js/MyPage.js"></script>
+</body>
+</html>

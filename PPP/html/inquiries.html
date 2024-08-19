@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의사항</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/inquiries.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="main1.html">
+                <img src="../img/Logo.png" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="about.html" class="nav-link" id="about-link">사이트 소개</a></li>
+                    <li><a href="terms.html" class="nav-link" id="terms-link">이용약관</a></li>
+                    <li><a href="inquiries.html" class="nav-link active" id="inquiries-link">문의사항</a></li>
+                    <div class="user-info">
+                        <span class="profile-text">정재훈 님</span>
+                        <button class="logout-btn" onclick="location.href='login.html'">로그아웃</button>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="terms-container">
+            <div class="terms-sidebar">
+                <ul>
+                    <li class="terms-tab active" data-content="service">서비스 문의</li>
+                    <li class="terms-tab" data-content="review">리뷰 및 평점 문의</li>
+                    <li class="terms-tab" data-content="account">계정 관련 문의</li>
+                    <li class="terms-tab" data-content="report">신고 문의</li>
+                </ul>
+            </div>
+            <div class="terms-content">
+                <div id="service" class="terms-content-item active">
+                    <h3>서비스 문의</h3>
+                    <div class="inquiry-container"></div>
+                    <button class="register-btn" onclick="showForm('service')">등록하기</button>
+                </div>
+
+                <div id="review" class="terms-content-item">
+                    <h3>리뷰 및 평점 문의</h3>
+                    <div class="inquiry-container"></div>
+                    <button class="register-btn" onclick="showForm('review')">등록하기</button>
+                </div>
+
+                <div id="account" class="terms-content-item">
+                    <h3>계정 관련 문의</h3>
+                    <div class="inquiry-container"></div>
+                    <button class="register-btn" onclick="showForm('account')">등록하기</button>
+                </div>
+
+                <div id="report" class="terms-content-item">
+                    <h3>신고 문의</h3>
+                    <div class="inquiry-container"></div>
+                    <button class="register-btn" onclick="showForm('report')">등록하기</button>
+                </div>
+
+                <!-- 등록하기 폼 -->
+                <div id="inquiry-form" class="inquiry-form" style="display: none;">
+                    <form id="inquiryForm" method="post" action="/api/inquiries" enctype="multipart/form-data">
+                        <input type="hidden" name="type" value="service">
+                        <div>
+                            <label for="title">제목</label>
+                            <input type="text" id="title" name="title" required>
+                        </div>
+                        <div>
+                            <label for="description">내용</label>
+                            <textarea id="description" name="description" rows="10" required></textarea>
+                        </div>
+                        <div>
+                            <label for="attachment">파일 선택</label>
+                            <input type="file" id="attachment" name="attachment">
+                        </div>
+                        <button type="submit">문의하기</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 문의 상세 정보 및 댓글 폼 -->
+            <div id="inquiry-details" class="inquiry-details" style="display: none;">
+                <button class="return-btn" onclick="showInquiryList()">X</button>
+                <span class="inquiry-username" id="inquiry-username"></span>
+                <h3 id="inquiry-title"></h3> <!-- 제목을 표시하는 h3 태그 -->
+                <span class="date">날짜: <span id="inquiry-date"></span></span>
+                <div class="content-box">
+                    <p id="inquiry-content">내용 전용 칸에 대한 내용이 여기에 표시됩니다.</p>
+                </div>
+                <h4>댓글</h4>
+                <div id="comments-container"></div>
+                <form id="commentForm">
+                    <input type="hidden" name="inquiryId" id="inquiryId">
+                    <label for="commentText">댓글:</label>
+                    <input type="text" id="commentText" name="commentText" required>
+                    <button type="submit">댓글 달기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

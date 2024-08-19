@@ -1,0 +1,311 @@
+/* 기본적인 전역 설정 */
+body {
+    font-family: '맑은 고딕', sans-serif; /* 웹 페이지에서 사용할 기본 폰트 설정 */
+    background-color: #ffffff; /* 배경색을 흰색으로 설정 */
+    margin: 0; /* 페이지의 기본 마진을 없앰 */
+    padding: 0; /* 페이지의 기본 패딩을 없앰 */
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000; /* 전체 컨테이너에 검은색 테두리 추가 */
+    border-radius: 15px; /* 컨테이너 모서리를 둥글게 */
+    padding: 5px; /* 전체 컨테이너에 패딩 추가 */
+}
+
+.profile-text {
+    font-size: 18px;
+    margin-right: 10px; /* 텍스트와 로그아웃 버튼 사이의 간격 */
+}
+
+.logout-btn {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #e5e7eb; /* 회색 배경 */
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #d1d5db; /* 호버 시 약간 더 진한 회색 배경 */
+}
+/* 헤더 파트 */
+header {
+    display: flex; /* 헤더를 플렉스 박스로 설정하여 자식 요소들을 유연하게 배치 */
+    justify-content: space-between; /* 자식 요소들(로고, 메뉴, 버튼들)을 양 끝으로 배치 */
+    align-items: center; /* 자식 요소들을 수직으로 중앙에 정렬 */
+    background-color: #fff; /* 헤더의 배경색을 흰색으로 설정 */
+    padding: 10px 20px; /* 헤더 내부 여백 설정 (위아래 10px, 좌우 20px) */
+    border-bottom: 1px solid #ddd; /* 헤더 하단에 얇은 회색 선을 추가 */
+}
+
+header .logo img {
+    width: 100px; /* 로고 이미지의 너비를 100px로 설정 */
+    height: auto; /* 이미지의 높이를 자동으로 설정하여 너비에 맞게 비율 유지 */
+}
+
+header nav ul {
+    list-style: none; /* 메뉴 리스트의 기본 불릿 스타일 제거 */
+    display: flex; /* 메뉴 아이템들을 플렉스 박스로 설정하여 한 줄에 배치 */
+    margin: 0; /* 메뉴 리스트의 기본 마진을 없앰 */
+    padding: 0; /* 메뉴 리스트의 기본 패딩을 없앰 */
+}
+
+header nav ul li {
+    margin: 0 60px; /* 각 메뉴 아이템들 사이에 좌우 20px의 간격 설정 */
+}
+
+header nav ul li a {
+    text-decoration: none; /* 메뉴 아이템의 밑줄 제거 */
+    color: #000; /* 텍스트 색상을 검정으로 설정 */
+    font-weight: bold; /* 텍스트를 굵게 표시 */
+    font-size: 20px; /* 텍스트 크기를 16px로 설정 */
+}
+
+header .auth-buttons {
+    display: flex; /* 로그인/회원가입 버튼들을 플렉스 박스로 설정하여 한 줄에 배치 */
+}
+
+header .auth-buttons button {
+    margin-left: 10px; /* 각 버튼들 사이에 좌측 10px의 간격 설정 */
+    padding: 8px 20px; /* 버튼 내부 여백 설정 (위아래 8px, 좌우 20px) */
+    background-color: #007bff; /* 버튼 배경색을 파란색으로 설정 */
+    color: #fff; /* 버튼 텍스트 색상을 흰색으로 설정 */
+    border: none; /* 버튼의 기본 테두리 제거 */
+    border-radius: 3px; /* 버튼의 모서리를 둥글게 설정 */
+    cursor: pointer; /* 버튼에 마우스를 올리면 포인터 커서로 변경 */
+    font-size: 16px; /* 버튼 텍스트 크기를 14px로 설정 */
+}
+
+header .auth-buttons button:hover {
+    background-color: #0056b3; /* 버튼에 마우스를 올렸을 때 배경색을 더 어두운 파란색으로 변경 */
+}
+
+/* 컨테이너 및 폼 설정 파트 */
+.container {
+    width: 1100px; /* 컨테이너 너비를 1000px로 설정 */
+    margin: 20px auto; /* 컨테이너를 화면 중앙에 배치하고 위아래 20px의 여백 추가 */
+    padding: 20px; /* 컨테이너 내부 여백 설정 */
+    background: #fff; /* 컨테이너 배경색을 흰색으로 설정 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 컨테이너에 가벼운 그림자 추가 */
+    border: 1px solid #ddd; /* 컨테이너에 얇은 회색 테두리 추가 */
+}
+
+h1 {
+    text-align: left; /* 제목을 왼쪽 정렬 */
+    font-size: 32px; /* 제목 크기를 24px로 설정 */
+    color: #333; /* 제목 텍스트 색상을 어두운 회색으로 설정 */
+    margin-bottom: 20px; /* 제목 하단에 20px의 여백 추가 */
+}
+
+form {
+    display: flex; /* 폼 내부 요소들을 플렉스 박스로 설정 */
+    flex-direction: column; /* 폼 내부 요소들을 세로로 쌓이도록 설정 */
+}
+
+.form-row {
+    display: flex; /* .form-row 내부의 요소들을 플렉스 박스로 설정 */
+    justify-content: space-between; /* .form-row 내부 요소들을 좌우 끝으로 배치 */
+    margin-bottom: 20px; /* .form-row 하단에 20px의 여백 추가 */
+}
+
+.left-section {
+    width: 42%; /* 왼쪽 섹션의 너비를 컨테이너의 48%로 설정 */
+}
+
+.right-section {
+    width: 48%; /* 오른쪽 섹션의 너비를 컨테이너의 48%로 설정 */
+    margin-right: 80px; /* 오른쪽 섹션을 20px만큼 왼쪽으로 이동 */
+}
+
+.photo-upload {
+    width: 75%;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #aaa;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.photo-placeholder, #uploaded-image {
+    position: absolute;
+    text-align: center;
+    font-size: 18px;
+    width: 200px;
+    color: #aaa;
+}
+
+#uploaded-image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 박스 크기에 맞춰지도록 설정 */
+    cursor: pointer; /* 마우스 포인터를 변경 */
+}
+
+.form-group {
+    display: flex; /* 폼 그룹을 플렉스 박스로 설정 */
+    margin-bottom: 15px; /* 폼 그룹 하단에 10px의 여백 추가 */
+}
+
+/* 사진 등록하기 버튼 스타일 */
+.photo-placeholder {
+    font-size: 18px; /* 텍스트 크기 설정 */
+    color: #aaa; /* 텍스트 색상 설정 */
+    background-color: #f1f1f1; /* 배경색 설정 */
+    padding: 10px 20px; /* 내부 여백 설정 */
+    border-radius: 5px; /* 모서리를 둥글게 설정 */
+    cursor: pointer; /* 마우스 포인터를 변경 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
+    display: inline-block; /* 인라인 블록 요소로 설정 */
+}
+.photo-placeholder:hover {
+    background-color: #ddd; /* 마우스 오버 시 배경색 변경 */
+}
+
+/* 입력 필드 및 라벨 파트 */
+label {
+    width: 70px; /* 라벨의 너비를 70px로 설정 */
+    font-size: 18px; /* 라벨 텍스트 크기를 14px로 설정 */
+    color: #333; /* 라벨 텍스트 색상을 진한 회색으로 설정 */
+    line-height: 1.5; /* 라벨 텍스트의 줄 간격을 1.5로 설정 */
+    margin-right: 1px; /* 라벨 오른쪽에 10px의 여백 추가 */
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 300px; /* 입력 필드의 너비를 라벨을 제외한 나머지로 설정 */
+    padding: 7px; /* 입력 필드 내부 여백 설정 */
+    border: 1px solid #ccc; /* 입력 필드의 테두리를 연한 회색으로 설정 */
+    border-radius: 3px; /* 입력 필드의 모서리를 둥글게 설정 */
+    font-size: 14px; /* 입력 필드의 텍스트 크기를 14px로 설정 */
+    color: #333; /* 입력 필드의 텍스트 색상을 진한 회색으로 설정 */
+    box-sizing: border-box; /* 테두리와 패딩을 포함하여 너비를 계산하도록 설정 */
+}
+
+.unit {
+    margin-left: 5px; /* 입력 박스와 단위 텍스트 사이에 5px의 간격 추가 */
+    font-size: 16px; /* 단위 텍스트의 크기를 14px로 설정 */
+    color: #333; /* 단위 텍스트의 색상을 진한 회색으로 설정 */
+    line-height: 1.5; /* 단위 텍스트의 줄 간격을 설정 */
+}
+
+/* 품종 선택 드롭다운 */
+select {
+    width: 310px; /* 드롭다운 박스의 너비를 설정 */
+    padding: 7px; /* 내부 여백 설정 */
+    border: 1px solid #ccc; /* 테두리 색상 설정 */
+    border-radius: 3px; /* 모서리를 둥글게 설정 */
+    font-size: 14px; /* 텍스트 크기 설정 */
+    color: #333; /* 텍스트 색상 설정 */
+    box-sizing: border-box; /* 테두리와 패딩을 포함하여 너비를 계산 */
+    text-align: center;
+}
+
+/* 성별 선택 라디오 버튼 */
+input[type="radio"] {
+    margin-left: 10px; /* 각 라디오 버튼과 텍스트 사이의 간격을 설정 */
+    margin-right: 5px;
+}
+
+label[for="male"], label[for="female"] {
+    margin-right: 20px; /* 라디오 버튼과 텍스트 사이의 간격을 설정 */
+    font-size: 14px;
+}
+
+/* 탭 및 하단 섹션 파트 */
+.bottom-section {
+    margin-top: 20px; /* 하단 섹션의 상단에 20px의 여백 추가 */
+}
+
+.tabs {
+    display: flex; /* 탭을 플렉스 박스로 설정하여 한 줄에 배치 */
+    border-top: 1px solid #ddd; /* 탭 상단에 얇은 회색 선 추가 */
+    border-left: 1px solid #ddd; /* 탭 왼쪽에 얇은 회색 선 추가 */
+}
+
+.tablink {
+    flex: 1; /* 각 탭을 동일한 너비로 설정 */
+    padding: 10px 0; /* 탭의 내부 여백 설정 (위아래 10px) */
+    text-align: center; /* 탭의 텍스트를 중앙 정렬 */
+    background-color: #f1f1f1; /* 탭의 배경색을 연한 회색으로 설정 */
+    border-right: 1px solid #ddd; /* 탭 오른쪽에 얇은 회색 선 추가 */
+    border-bottom: 1px solid #ddd; /* 탭 하단에 얇은 회색 선 추가 */
+    border-top: 1px solid #ddd; /* 탭 하단에 얇은 회색 선 추가 */
+    border-left: 1px solid #ddd; /* 탭 하단에 얇은 회색 선 추가 */
+    cursor: pointer; /* 탭에 마우스를 올리면 포인터 커서로 변경 */
+    font-size: 14px; /* 탭 텍스트 크기를 14px로 설정 */
+    color: #333; /* 탭 텍스트 색상을 진한 회색으로 설정 */
+    transition: background-color 0.3s; /* 탭의 배경색이 부드럽게 전환되도록 설정 */
+}
+
+.tablink.active {
+    background-color: #007bff; /* 활성화된 탭의 배경색을 파란색으로 설정 */
+    color: white; /* 활성화된 탭의 텍스트 색상을 흰색으로 설정 */
+}
+
+.tablink:hover {
+    background-color: #ddd; /* 탭에 마우스를 올렸을 때 배경색을 어두운 회색으로 변경 */
+}
+
+.tabcontent {
+    display: none; /* 기본적으로 탭 콘텐츠를 숨김 */
+    padding: 20px; /* 탭 콘텐츠 내부 여백 설정 */
+    border: 1px solid #ddd; /* 탭 콘텐츠에 얇은 회색 테두리 추가 */
+    border-top: none; /* 탭 콘텐츠의 상단 테두리 제거 */
+    width: 100%; /* 탭 콘텐츠의 너비를 부모 요소의 100%로 설정 */
+    box-sizing: border-box; /* 테두리와 패딩을 포함하여 너비를 계산하도록 설정 */
+}
+
+.tabcontent.active {
+    display: block; /* 활성화된 탭 콘텐츠를 보이도록 설정 */
+}
+
+textarea {
+    width: 100%; /* 텍스트 영역의 너비를 부모 요소의 100%로 설정 */
+    height: 200px; /* 텍스트 영역의 높이를 80px로 설정 */
+    padding: 5px; /* 텍스트 영역 내부 여백 설정 */
+    border: 1px solid #ccc; /* 텍스트 영역의 테두리를 연한 회색으로 설정 */
+    border-radius: 3px; /* 텍스트 영역의 모서리를 둥글게 설정 */
+    font-size: 14px; /* 텍스트 영역의 텍스트 크기를 14px로 설정 */
+    color: #333; /* 텍스트 영역의 텍스트 색상을 진한 회색으로 설정 */
+    box-sizing: border-box; /* 테두리와 패딩을 포함하여 너비를 계산하도록 설정 */
+    resize: none; /* 사용자가 텍스트 영역의 크기를 조절하지 못하도록 설정 */
+}
+
+/* 버튼 그룹 설정 */
+.button-group {
+    display: flex; /* 버튼들을 가로로 나란히 배치 */
+    justify-content: center; /* 버튼들을 가로로 중앙에 배치 */
+    margin-top: 20px;
+    gap: 250px;
+}
+
+.regist-btn, .update-btn {
+    width: 15%; /* 제출 버튼의 너비를 부모 요소의 100%로 설정 */
+    padding: 10px; /* 제출 버튼 내부 여백 설정 */
+    background-color: #007bff; /* 제출 버튼의 배경색을 파란색으로 설정 */
+    color: white; /* 제출 버튼의 텍스트 색상을 흰색으로 설정 */
+    border: none; /* 제출 버튼의 기본 테두리 제거 */
+    border-radius: 5px; /* 제출 버튼의 모서리를 둥글게 설정 */
+    cursor: pointer; /* 제출 버튼에 마우스를 올리면 포인터 커서로 변경 */
+    font-size: 16px; /* 제출 버튼의 텍스트 크기를 16px로 설정 */
+    margin-right: 0; /* 제출 버튼 상단에 10px의 여백 추가 */
+}
+
+.regist-btn:hover {
+    background-color: #0056b3; /* 제출 버튼에 마우스를 올렸을 때 배경색을 더 어두운 파란색으로 변경 */
+}
+
+.update-btn {
+    background-color: #d6d8db; /* 수정 버튼의 배경색을 연한 회색으로 설정 */
+    color: #333; /* 텍스트 색상 진한 회색으로 설정 */
+    border: none; /* 테두리 없음 */
+}
+
+.update-btn:hover {
+    background-color: #c6c8ca; /* 마우스 오버 시 배경색 */
+}

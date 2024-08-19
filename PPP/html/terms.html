@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이용약관</title>
+    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="main1.html">
+                <img src="../img/logo.png" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="about.html" class="nav-link">사이트 소개</a></li>
+                    <li><a href="terms.html" class="nav-link active"  id="terms-link">이용약관</a></li>
+                    <li><a href="inquiries.html" class="nav-link">문의사항</a></li>
+                    <div class="user-info">
+                        <span class="profile-text">정재훈 님</span>
+                        <button class="logout-btn" onclick="location.href='login.html'">로그아웃</button>
+                    </div>          
+                </ul>
+            </nav>
+        </header>
+
+        <div class="terms-container">
+            <div class="terms-sidebar">
+                <ul>
+                    <li class="terms-tab active" data-content="protector">보호자 정책</li>
+                    <li class="terms-tab" data-content="temporary-protector">임시보호자 정책</li>
+                    <li class="terms-tab" data-content="additional-policies">추가 정책 및 가이드라인</li>
+                </ul>
+            </div>
+            <div class="terms-content">
+                <div id="protector" class="terms-content-item active">
+                    <h3>보호자를 위한 정책</h3>
+                    <p>1. 이용 약관 (Terms of Service)</p>
+                    <p>서비스 설명: 보호자가 반려동물을 임시 보호자에게 맡길 때 이용해야 하는 서비스 절차를 명시합니다.</p>
+                    <p>계정 관리: 보호자 계정 생성, 정보 입력 및 계정 삭제 절차를 설명합니다.</p>
+                    <p>의무 사항: 반려동물의 상태, 건강 정보, 특이사항 등을 정확하게 입력해야 하는 의무를 명시합니다.</p>
+                    <p>2. 개인정보 처리방침 (Privacy Policy)</p>
+                    <p>수집 정보: 보호자로부터 수집되는 개인 정보의 종류와 목적을 설명합니다.</p>
+                    <p>정보 보호: 수집된 정보는 암호화되어 저장되며, 외부 접근으로부터 보호됩니다.</p>
+                    <p>정보 공유: 보호자의 정보는 임시 보호자와의 예약 및 반려동물 관리 목적으로만 공유되며, 제3자에게는 공유되지 않습니다.</p>
+                    <p>3. 취소 및 환불 정책 (Cancellation and Refund Policy)</p>
+                    <p>예약 취소 절차: 보호자는 예약일 24시간 전까지 예약 취소를 요청할 수 있으며, 취소는 계정 관리 페이지에서 가능합니다.</p>
+                    <p>환불 규정: 예약일 24시간 전 취소 시 전액 환불, 이후 취소 시 환불 불가합니다.</p>
+                    <p>4. 책임의 한계 (Limitation of Liability)</p>
+                    <p>플랫폼의 역할: 본 플랫폼은 보호자와 임시 보호자를 연결하는 중개 역할을 합니다. 반려동물의 안전 및 건강 상태에 대한 책임은 보호자에게 있습니다.</p>
+                    <p>이용자 책임: 보호자는 반려동물에 대한 정확한 정보를 제공해야 하며, 정보 미비로 인한 문제 발생 시 책임을 질 수 있습니다.</p>
+                    <p>5. 안전 가이드라인 (Safety Guidelines)</p>
+                    <p>반려동물을 임시 보호자에게 인도하기 전, 건강 상태 확인 및 필요한 물품을 함께 전달해야 합니다.</p>
+                    <p>응급 상황 대응: 반려동물이 아프거나 부상을 입은 경우, 임시 보호자와 신속하게 연락을 취하고 필요한 조치를 취해야 합니다.</p>
+                </div>
+                <div id="temporary-protector" class="terms-content-item">                    
+                    <h3>임시보호자를 위한 정책</h3>
+                    <p>1. 이용 약관 (Terms of Service)</p>
+                    <p>서비스 설명: 임시 보호자가 반려동물을 맡기 위해 필요한 절차를 명시합니다.</p>
+                    <p>계정 관리: 임시 보호자는 계정 생성 시 이름, 연락처, 이메일 등의 정보를 입력해야 합니다. 계정 삭제를 원하는 경우, 고객 지원팀에 요청해야 하며, 계정 삭제 시 모든 정보는 즉시 삭제됩니다.</p>
+                    <p>의무 사항: 임시 보호자는 맡은 반려동물을 안전하게 보호하고 관리해야 하며, 보호자의 요구사항을 충실히 이행해야 합니다.</p>
+                    <p>2. 개인정보 처리방침 (Privacy Policy)</p>
+                    <p>수집 정보: 임시 보호자로부터 수집되는 정보는 이름, 연락처, 이메일 등이며, 이는 서비스 제공을 위한 목적입니다.</p>
+                    <p>정보 보호: 수집된 정보는 암호화하여 저장되며, 외부 접근으로부터 보호됩니다.</p>
+                    <p>정보 공유: 임시 보호자의 정보는 보호자와의 예약 및 반려동물 관리 목적으로만 공유되며, 제3자에게는 공유되지 않습니다.</p>
+                    <p>3. 취소 및 환불 정책 (Cancellation and Refund Policy)</p>
+                    <p>예약 취소 절차: 임시 보호자는 예약일 24시간 전까지 예약 취소를 요청할 수 있으며, 취소는 계정 관리 페이지에서 가능합니다.</p>
+                    <p>환불 규정: 예약일 24시간 전 취소 시 전액 환불, 이후 취소 시 환불 불가합니다.</p>
+                    <p>4. 책임의 한계 (Limitation of Liability)</p>
+                    <p>플랫폼의 역할: 본 플랫폼은 보호자와 임시 보호자를 연결하는 중개 역할을 합니다. 반려동물의 안전 및 건강 상태에 대한 책임은 임시 보호자에게 있습니다.</p>
+                    <p>이용자 책임: 임시 보호자는 맡은 반려동물을 안전하게 보호해야 하며, 반려동물의 건강 상태를 지속적으로 확인해야 합니다.</p>
+                    <p>5. 안전 가이드라인 (Safety Guidelines)</p>
+                    <p>반려동물을 맡은 후, 건강 상태를 지속적으로 확인하고, 필요한 물품과 함께 보호해야 합니다.</p>
+                    <p>응급 상황 대응: 반려동물이 아프거나 부상을 입은 경우, 보호자와 신속하게 연락을 취하고 필요한 조치를 취해야 합니다.</p>	        
+                </div>
+                <div id="additional-policies" class="terms-content-item">
+	                <h3>추가 정책 및 가이드라인</h3>
+                    <p>1. 중개 서비스 정책 (Mediation Service Policy)</p>
+                    <p>중개 기준: 보호자와 임시 보호자를 매칭하는 기준과 절차를 설명합니다. 반려동물의 특성과 임시 보호자의 경험을 고려합니다.</p>
+                    <p>분쟁 해결: 보호자와 임시 보호자 간의 분쟁 해결 절차를 명시합니다. 문제가 발생할 경우, 고객 지원팀이 중재 역할을 합니다.</p>
+                    <p>피드백 시스템: 이용자 피드백 수집 및 반영 절차를 설명합니다. 피드백은 서비스 개선에 반영됩니다.</p>
+                    <p>2. 교육 및 지원 (Education and Support)</p>
+                    <p>교육 자료: 보호자와 임시 보호자 모두를 위한 교육 자료와 가이드를 제공합니다. 반려동물 관리와 관련된 최신 정보를 제공합니다.</p>
+                    <p>고객 지원: 문제가 발생했을 때 도움을 받을 수 있는 고객 지원 절차를 설명합니다. 고객 지원팀은 24시간 지원을 제공합니다.</p>
+                    <p>정책 정립 시 참고사항</p>
+                    <p>법적 검토: 각 정책은 법률 전문가의 검토를 받아야 합니다.</p>
+                    <p>명확성과 이해: 정책 문서는 쉽게 이해할 수 있는 언어로 작성되어야 합니다.</p>
+                    <p>업데이트: 정책은 정기적으로 검토 및 업데이트가 필요합니다.</p>
+                    <p>이용자 교육: 사용자들이 정책을 잘 이해하고 준수할 수 있도록 교육 자료나 가이드를 제공해야 합니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.terms-tab');
+            const contentItems = document.querySelectorAll('.terms-content-item');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    // 모든 탭과 콘텐츠를 비활성화
+                    tabs.forEach(tab => tab.classList.remove('active'));
+                    contentItems.forEach(item => item.classList.remove('active'));
+
+                    // 클릭된 탭과 연관된 콘텐츠를 활성화
+                    this.classList.add('active');
+                    document.getElementById(this.getAttribute('data-content')).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+body {
+    font-family: 'Arial', sans-serif; /* Arial 폰트를 사용하고, 폰트가 없을 경우 기본 sans-serif 폰트를 사용 */
+    margin: 0; /* 페이지의 기본 마진을 제거 */
+    padding: 0; /* 페이지의 기본 패딩을 제거 */
+    box-sizing: border-box; /* 모든 요소의 크기를 패딩과 테두리를 포함한 크기로 계산 */
+}
+
+header {
+    display: flex; /* 헤더를 플렉스 박스로 설정하여 내부 요소를 수평으로 배치 */
+    justify-content: space-between; /* 내부 요소들을 양 끝에 배치 */
+    align-items: center; /* 내부 요소들을 수직으로 가운데 정렬 */
+    padding: 20px; /* 헤더 내부에 20px의 패딩을 추가 */
+    border-bottom: 1px solid #ddd; /* 헤더의 하단에 연한 회색 실선을 추가 */
+}
+
+header img {
+    width: 80px; /* 헤더 로고 이미지를 80px 너비로 설정 */
+}
+
+nav {
+    display: flex; /* 네비게이션 바를 플렉스 박스로 설정 */
+    gap: 20px; /* 네비게이션 링크들 사이에 20px의 간격을 추가 */
+}
+
+nav a {
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: black; /* 링크의 기본 텍스트 색상을 검정색으로 설정 */
+    font-size: 18px; /* 링크의 텍스트 크기를 18px로 설정 */
+}
+
+nav a:hover {
+    color: #ff6f61; /* 링크에 마우스를 올렸을 때 텍스트 색상을 주황빛으로 변경 */
+}
+
+.main-image {
+    width: 100%; /* 메인 이미지의 너비를 100%로 설정하여 화면에 맞춤 */
+    height: 300px; /* 메인 이미지의 높이를 300px로 고정 */
+    object-fit: cover; /* 이미지가 박스 크기에 맞게 잘리거나 확대되도록 설정 */
+}
+
+.content {
+    display: flex; /* 컨텐츠 영역을 플렉스 박스로 설정하여 내부 요소들을 수평으로 배치 */
+    padding: 20px; /* 컨텐츠 영역에 20px의 패딩을 추가 */
+}
+
+.search-section {
+    width: 200px; /* 검색 섹션의 너비를 200px로 설정 */
+    display: flex; /* 검색 섹션을 플렉스 박스로 설정하여 내부 요소들을 수직으로 배치 */
+    flex-direction: column; /* 플렉스 방향을 세로로 설정 */
+    border: 1px solid #ccc; /* 검색 섹션에 연한 회색 테두리를 추가 */
+    padding: 20px; /* 검색 섹션 내부에 20px의 패딩을 추가 */
+    background-color: white; /* 배경 색상을 흰색으로 설정 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 그림자를 추가하여 검색 섹션이 부각되도록 설정 */
+}
+
+.search-section-inner {
+    position: sticky; /* 검색 섹션 내부 요소들이 스크롤 시 고정된 위치에 머물도록 설정 */
+    top: 20px; /* 스크롤 시 화면 상단에서 20px 떨어진 위치에 고정 */
+}
+
+.search-section input[type="text"],
+.search-section select {
+    padding: 10px; /* 입력 필드와 선택 필드에 10px의 패딩을 추가 */
+    margin-bottom: 10px; /* 필드들 사이에 10px의 간격을 추가 */
+    border: 1px solid #ccc; /* 필드의 테두리를 연한 회색으로 설정 */
+    border-radius: 5px; /* 필드의 모서리를 5px 둥글게 설정 */
+    width: 100%; /* 필드의 너비를 검색 섹션의 100%로 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 크기로 계산 */
+}
+
+.search-section button {
+    padding: 10px; /* 버튼에 10px의 패딩을 추가 */
+    background-color: #ffbfb8; /* 버튼의 배경색을 연한 핑크색으로 설정 */
+    color: black; /* 버튼의 텍스트 색상을 검정색으로 설정 */
+    border: none; /* 버튼의 테두리를 제거 */
+    border-radius: 5px; /* 버튼의 모서리를 5px 둥글게 설정 */
+    cursor: pointer; /* 버튼에 마우스를 올렸을 때 커서를 포인터로 변경 */
+    margin-bottom: 10px; /* 버튼들 사이에 10px의 간격을 추가 */
+    width: 100%; /* 버튼의 너비를 검색 섹션의 100%로 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 크기로 계산 */
+}
+
+.search-section button:hover {
+    background-color: #e55c50; /* 버튼에 마우스를 올렸을 때 배경색을 진한 주황빛으로 변경 */
+    color: white; /* 버튼 텍스트 색상을 흰색으로 변경 */
+}
+
+#my-info-btn {
+    margin-top: 175px; /* '내 정보' 버튼 위에 175px의 간격을 추가 */
+    background-color: aqua; /* '내 정보' 버튼의 배경색을 아쿠아 색으로 설정 */
+}
+
+#register-btn {
+    background-color: rgb(255, 227, 195); /* '등록 하기' 버튼의 배경색을 연한 베이지 색으로 설정 */
+}
+
+.animal-list {
+    display: grid; /* 동물 목록을 그리드 레이아웃으로 설정 */
+    grid-template-columns: repeat(3, 1fr); /* 동물 항목을 3개의 열로 배치 */
+    gap: 20px; /* 그리드 항목들 사이에 20px의 간격을 추가 */
+    flex-grow: 1; /* 그리드가 가능한 공간을 모두 차지하도록 설정 */
+    margin-left: 50px; /* 검색 섹션과의 간격을 50px로 설정 */
+    margin-top: 20px; /* 그리드 위에 20px의 간격을 추가 */
+}
+
+.animal-item {
+    border: 1px solid #ccc; /* 동물 항목에 연한 회색 테두리를 추가 */
+    padding: 10px; /* 동물 항목 내부에 10px의 패딩을 추가 */
+    text-align: center; /* 동물 항목의 텍스트를 가운데 정렬 */
+    position: relative; /* 동물 항목의 위치를 상대적으로 설정하여 내부 요소의 절대 위치 가능 */
+    cursor: pointer; /* 동물 항목에 마우스를 올렸을 때 커서를 포인터로 변경 */
+    height: 350px; /* 동물 항목의 높이를 350px로 고정 */
+    display: flex; /* 동물 항목을 플렉스 박스로 설정하여 내부 요소들을 수직으로 배치 */
+    flex-direction: column; /* 플렉스 방향을 세로로 설정 */
+    justify-content: space-between; /* 내부 요소들을 위아래로 공간을 균등하게 배치 */
+}
+
+.animal-item img {
+    width: 100%; /* 이미지의 너비를 동물 항목의 100%로 설정 */
+    height: 270px; /* 이미지의 높이를 270px로 고정 */
+    object-fit: cover; /* 이미지를 박스 크기에 맞게 자르거나 확대 */
+    border-radius: 10px; /* 이미지의 모서리를 10px 둥글게 설정 */
+}
+
+.animal-item p {
+    margin: 5px 0; /* 텍스트 상하에 5px의 간격을 추가 */
+    font-size: 16px; /* 텍스트 크기를 16px로 설정 */
+    line-height: 1.5; /* 텍스트 줄 간격을 1.5로 설정 */
+    word-wrap: break-word; /* 긴 단어를 줄바꿈하여 넘침 방지 */
+    white-space: normal; /* 텍스트의 공백 처리를 기본으로 설정 */
+    overflow: hidden; /* 텍스트가 박스를 넘칠 경우 숨김 */
+}
+.favorite-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: gray;
+    transition: transform 0.2s ease; /* 크기 변화를 위한 트랜지션 */
+}
+
+.favorite-btn.full {
+    color: red;
+    animation: heart-pop 0.3s ease; /* 하트 채워질 때 애니메이션 실행 */
+    transform: scale(2); 
+}
+
+@keyframes heart-pop {
+    0% {
+        transform: scale(1); /* 기본 크기 */
+    }
+    100% {
+        transform: scale(2); /* 커지는 크기 */
+    }
+}
+
+
+.favorite-list-item {
+    display: flex; /* 관심 목록 항목을 플렉스 박스로 설정하여 내부 요소를 수평으로 배치 */
+    align-items: center; /* 내부 요소를 수직으로 가운데 정렬 */
+    border: 1px solid #ccc; /* 항목에 연한 회색 테두리를 추가 */
+    padding: 10px; /* 항목 내부에 10px의 패딩을 추가 */
+    margin-bottom: 10px; /* 항목 아래에 10px의 간격을 추가 */
+    border-radius: 10px; /* 항목의 모서리를 10px 둥글게 설정 */
+    background-color: #f9f9f9; /* 항목의 배경색을 밝은 회색으로 설정 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 항목에 그림자를 추가하여 부각 */
+    position: relative; /* 항목의 위치를 상대적으로 설정하여 내부 요소의 절대 위치 가능 */
+}
+
+.favorite-list-item img {
+    width: 100px; /* 이미지의 너비를 100px로 설정 */
+    height: 100px; /* 이미지의 높이를 100px로 설정 */
+    object-fit: cover; /* 이미지를 박스 크기에 맞게 자르거나 확대 */
+    border-radius: 10px; /* 이미지의 모서리를 10px 둥글게 설정 */
+    margin-right: 20px; /* 이미지와 텍스트 사이에 20px의 간격을 추가 */
+    border: 1px solid #ddd; /* 이미지에 연한 회색 테두리를 추가 */
+}
+
+.favorite-list-item .details {
+    flex-grow: 1; /* 텍스트가 가능한 공간을 모두 차지하도록 설정 */
+}
+
+.favorite-list-item .details p {
+    margin: 5px 0; /* 텍스트 상하에 5px의 간격을 추가 */
+    font-size: 16px; /* 텍스트 크기를 16px로 설정 */
+    color: #333; /* 텍스트 색상을 짙은 회색으로 설정 */
+}
+
+.favorite-list-item .details p:first-child {
+    font-weight: bold; /* 첫 번째 텍스트(이름)를 굵게 표시 */
+}
+
+.favorite-list-item .favorite-btn {
+    position: absolute; /* 버튼의 위치를 절대적으로 설정 */
+    bottom: 10px; /* 항목의 하단에서 10px 위에 위치 */
+    right: 10px; /* 항목의 오른쪽에서 10px 왼쪽에 위치 */
+    font-size: 24px; /* 버튼의 텍스트 크기를 24px로 설정 */
+    color: red; /* 버튼 텍스트 색상을 빨간색으로 설정 */
+    background: none; /* 버튼의 배경을 없앰 */
+    border: none; /* 버튼의 테두리를 없앰 */
+    cursor: pointer; /* 버튼에 마우스를 올렸을 때 커서를 포인터로 변경 */
+}
+
+.favorite-btn.full {
+    color: red; /* '관심' 상태일 때 버튼 텍스트 색상을 빨간색으로 설정 */
+}
+
+.favorite-btn.empty {
+    color: gray; /* '관심'이 아닐 때 버튼 텍스트 색상을 회색으로 설정 */
+}
+
+.modal {
+    display: none; /* 모달 창을 기본적으로 숨김 */
+    position: fixed; /* 모달 창을 화면에 고정 */
+    z-index: 1; /* 모달 창을 다른 요소들 위에 배치 */
+    left: 50%; /* 화면의 가로 중심에 위치 */
+    top: 50%; /* 화면의 세로 중심에 위치 */
+    transform: translate(-50%, -50%); /* 모달 창을 정확히 중앙에 위치시키기 위해 좌표를 조정 */
+    width: 80%; /* 모달 창의 너비를 화면의 80%로 설정 */
+    max-width: 500px; /* 모달 창의 최대 너비를 500px로 제한 */
+    background-color: rgba(0, 0, 0, 0.5); /* 모달 창의 배경을 반투명 검정색으로 설정 */
+}
+
+.modal-content {
+    background-color: white; /* 모달 창 내부의 배경색을 흰색으로 설정 */
+    margin: auto; /* 모달 창 내부 콘텐츠를 중앙에 배치 */
+    padding: 20px; /* 모달 창 내부 콘텐츠에 20px의 패딩을 추가 */
+    border: 1px solid #888; /* 모달 창 내부 콘텐츠에 연한 회색 테두리를 추가 */
+    position: relative; /* 내부 요소의 절대 위치 가능 */
+}
+
+.modal-content img {
+    width: 100%; /* 이미지의 너비를 모달 창의 100%로 설정 */
+    height: auto; /* 이미지의 높이를 자동으로 설정 */
+    max-height: 300px; /* 이미지의 최대 높이를 300px로 제한 */
+    object-fit: cover; /* 이미지를 박스 크기에 맞게 자르거나 확대 */
+}
+
+.close-btn {
+    position: absolute; /* 닫기 버튼의 위치를 절대적으로 설정 */
+    top: 10px; /* 모달 창 내부의 상단에서 10px 아래에 위치 */
+    right: 10px; /* 모달 창 내부의 오른쪽에서 10px 왼쪽에 위치 */
+    font-size: 28px; /* 닫기 버튼의 텍스트 크기를 28px로 설정 */
+    cursor: pointer; /* 닫기 버튼에 마우스를 올렸을 때 커서를 포인터로 변경 */
+}
+
+#add-favorite, #chat-btn {
+    padding: 10px; /* 버튼들에 10px의 패딩을 추가 */
+    margin: 10px 0; /* 버튼들 사이에 10px의 간격을 추가 */
+    width: 100%; /* 버튼들의 너비를 모달 창의 100%로 설정 */
+    background-color: #ff6f61; /* 버튼들의 배경색을 주황빛으로 설정 */
+    color: white; /* 버튼 텍스트 색상을 흰색으로 설정 */
+    border: none; /* 버튼들의 테두리를 없앰 */
+    border-radius: 5px; /* 버튼들의 모서리를 5px 둥글게 설정 */
+    cursor: pointer; /* 버튼들에 마우스를 올렸을 때 커서를 포인터로 변경 */
+}
+
+#add-favorite:hover, #chat-btn:hover {
+    background-color: #e55c50; /* 버튼들에 마우스를 올렸을 때 배경색을 진한 주황빛으로 변경 */
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000; /* 검은색 테두리 */
+    border-radius: 15px; /* 둥근 모서리 */
+    padding: 5px; /* 패딩 */
+    background-color: white; /* 배경 색상 */
+}
+
+.profile-text {
+    font-size: 18px; /* 폰트 크기 */
+    margin-right: 10px; /* 오른쪽 간격 */
+}
+
+.logout-btn {
+    font-size: 16px; /* 폰트 크기 */
+    border: 1px solid #ccc; /* 회색 테두리 */
+    background-color: #e5e7eb; /* 회색 배경 */
+    padding: 5px 15px; /* 패딩 */
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer; /* 포인터 커서 */
+}
+
+.logout-btn:hover {
+    background-color: #d1d5db; /* 호버 시 더 진한 회색 배경 */
+}
+.navbar {
+    display: flex;
+    justify-content: space-between; /* 요소들을 양 끝에 배치 */
+    align-items: center; /* 수직 가운데 정렬 */
+    padding: 10px 20px; /* 상하 패딩 추가 */
+    border-bottom: none; /* 하단 테두리 제거 */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+.navbar a:hover {
+    color: #ff6f61;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000; /* 전체 컨테이너에 검은색 테두리 추가 */
+    border-radius: 15px; /* 컨테이너 모서리를 둥글게 */
+    padding: 5px 10px; /* 컨테이너 내부 패딩 */
+    background-color: white; /* 배경 색상 */
+}
+
+.profile-text {
+    font-size: 18px;
+    margin-right: 10px; /* 텍스트와 로그아웃 버튼 사이의 간격 */
+}
+
+.logout-btn {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #e5e7eb;
+    padding: 5px 15px; /* 패딩 */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #d1d5db; /* 호버 시 배경색 변경 */
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    position: relative;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동물 임시 보호 사이트</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="main1.html">
+                <img src="../img/logo.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="navbar">
+            <a href="about.html">사이트 소개</a>
+            <a href="terms.html">이용약관</a>
+            <a href="inquiries.html">문의사항</a>
+            <div class="user-info">
+                <span class="profile-text">정재훈 님</span>
+                <button class="logout-btn" onclick="location.href='login.html'">로그아웃</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <img src="../img/ou.jpg" alt="메인 이미지" class="main-image">
+        
+        <div class="content">
+            <aside class="search-section">
+                <div class="search-section-inner">
+                    <input type="text" id="search-input" placeholder="검색">
+                    <select>
+                        <option>--종류--</option>
+                        <option>포유류</option>
+                        <option>설치류</option>
+                        <option>조류</option>
+                    </select>
+                    <button id="search-btn">검색</button>
+                    <button id="my-info-btn">내 정보</button>
+                    <a href="PetRegistPage.html">
+                        <button id="register-btn">등록</button>
+                    </a>
+                </div>
+            </aside>
+            
+            <div id="animal-list" class="animal-list">
+                <!-- 애완동물 목록이 여기에 동적으로 추가됩니다 -->
+            </div>
+        </div>
+    </main>
+
+<!-- 모달 창 기본 구조 -->
+<div id="animal-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-body">
+            <!-- 모달 창 내용이 여기에 동적으로 추가됩니다 -->
+        </div>
+        <button id="chat-btn">채팅하기</button>
+    </div>
+</div>
+
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애완동물 등록</title>
+    <link rel="stylesheet" href="../css/PetRegistPage.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../PPP.png" alt="Logo" onclick="location.href='main1.html'">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main.html">홈</a></li>
+                <li><a href="about.html">사이트 소개</a></li>
+                <li><a href="terms.html">이용약관</a></li>
+                <li><a href="inquiries.html">문의사항</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <span class="profile-text">정재훈 님</span>
+            <button class="logout-btn" onclick="location.href='login.html'">로그아웃</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>애완동물 등록</h1>
+            <!-- enctype 수정 -->
+            <form id="petForm" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="left-section">
+                        <div class="photo-upload">
+                            <input type="file" id="photo" name="photo" accept="image/*" style="display: none;">
+                            <div class="photo-placeholder">사진 등록하기</div>
+                            <img id="uploaded-image" style="display:none; max-width: 100%; max-height: 100%; object-fit: contain;" alt="Uploaded Image">
+                        </div>
+                        <div class="file-section"></div>
+                    </div>
+                    <div class="right-section">
+                        <div class="form-group">
+                            <label for="name">이름</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="species">종류</label>
+                            <select id="species" name="species">
+                                <option value="">--종류 선택--</option>
+                                <option value="mammal">포유류</option>
+                                <option value="bird">조류</option>
+                                <option value="rodent">설치류</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>성별</label>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">수컷</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">암컷</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="breed">품종</label>
+                            <input type="text" id="breed" name="breed">
+                        </div>
+                        <div class="form-group">
+                            <label for="age">나이</label>
+                            <input type="text" id="age" name="age" required>
+                            <span class="unit">살(개월)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="height">키</label>
+                            <input type="text" id="height" name="height" required>
+                            <span class="unit">cm</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">몸무게</label>
+                            <input type="text" id="weight" name="weight" required>
+                            <span class="unit">kg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-section">
+                    <div class="tabs">
+                        <button type="button" class="tablink active" onclick="openTab('intro', event)">소개</button>
+                        <button type="button" class="tablink" onclick="openTab('health', event)">건강 상태</button>
+                        <button type="button" class="tablink" onclick="openTab('vaccination', event)">예방 접종 기록</button>
+                    </div>
+                    <div id="intro" class="tabcontent">
+                        <textarea id="introduction" name="introduction" placeholder="애완동물에 대한 소개를 입력하세요..."></textarea>
+                    </div>
+                    <div id="health" class="tabcontent" style="display:none">
+                        <textarea id="health-info" name="health" placeholder="애완동물에 대한 건강 상태를 입력하세요..."></textarea>
+                    </div>
+                    <div id="vaccination" class="tabcontent" style="display:none">
+                        <textarea id="vaccination-info" name="vaccination" placeholder="애완동물에 대한 예방 접종 기록을 입력하세요..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="regist-btn">등록</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/PetRegistPage.js"></script>
+</body>
+</html>
